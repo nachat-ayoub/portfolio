@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { IProject } from '../data/types';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
