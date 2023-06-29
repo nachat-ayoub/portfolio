@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .tag {
+    @apply border border-secondary text-sm px-2 py-0.5 rounded capitalize text-gray-600 focusRing;
+  }
+
+  .tag.active {
+    @apply text-gray-100 bg-blue-500 border-none;
+  }
+  .focusRing {
+    @apply focus:ring-4 focus:outline-none focus:ring-blue-300;
+  }
+}

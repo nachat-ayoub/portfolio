@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "title": "E-commerce Website",
+    "description": "A fully functional e-commerce website built with React, Redux, and Node.js.",
+    "url": "https://example.com/ecommerce",
+    "technologies": ["React", "Redux", "Node.js", "MongoDB"],
+    "tags": [
+      "web",
+      "frontend",
+      "backend",
+      "React",
+      "Redux",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "REST API"
+    ],
+    "image": "/assets/ecommerce.png",
+    "githubRepo": "https://github.com/your-username/ecommerce",
+    "liveDemo": {
+      "url": "https://example.com/ecommerce-demo"
+    },
+    "startDate": "2022-01-01",
+    "endDate": "2022-03-31",
+    "teamMembers": [
+      {
+        "name": "John Doe",
+        "role": "Frontend Developer"
+      },
+      {
+        "name": "Jane Smith",
+        "role": "Backend Developer"
+      }
+    ],
+    "status": "In Development"
+  },
+  {
+    "id": 2,
+    "title": "Multiplayer Game",
+    "description": "A multiplayer online game built with Unity and C#.",
+    "url": "https://example.com/game",
+    "technologies": ["Unity", "C#"],
+    "tags": ["game dev", "multiplayer"],
+    "image": "/assets/game.png",
+    "githubRepo": "https://github.com/your-username/game",
+    "liveDemo": null,
+    "startDate": "2022-02-01",
+    "endDate": "2022-06-30",
+    "teamMembers": [
+      {
+        "name": "Alex Johnson",
+        "role": "Game Developer"
+      },
+      {
+        "name": "Olivia Davis",
+        "role": "Game Designer"
+      }
+    ],
+    "status": "Started"
+  },
+  {
+    "id": 3,
+    "title": "Social Media App",
+    "description": "A mobile app for connecting people and sharing updates.",
+    "url": "https://example.com/social-media-app",
+    "technologies": ["React Native", "Firebase"],
+    "tags": ["mobile apps dev", "social media"],
+    "image": "/assets/social-media-app.png",
+    "githubRepo": null,
+    "liveDemo": {
+      "url": "https://example.com/social-media-app-demo"
+    },
+    "startDate": "2022-03-15",
+    "endDate": "2022-08-31",
+    "teamMembers": [
+      {
+        "name": "Sophia Johnson",
+        "role": "Mobile App Developer"
+      }
+    ],
+    "status": "Completed"
+  },
+  {
+    "id": 4,
+    "title": "Real Estate Website",
+    "description": "A website for browsing and searching real estate properties.",
+    "url": "https://example.com/real-estate",
+    "technologies": ["React", "Node.js", "MongoDB"],
+    "tags": ["web", "frontend", "backend"],
+    "image": "/assets/real-estate.png",
+    "githubRepo": "https://github.com/your-username/real-estate",
+    "liveDemo": {
+      "url": "https://example.com/real-estate-demo"
+    },
+    "startDate": "2022-04-01",
+    "endDate": "2022-06-30",
+    "teamMembers": [
+      {
+        "name": "Michael Brown",
+        "role": "Frontend Developer"
+      },
+      {
+        "name": "Emma Davis",
+        "role": "Backend Developer"
+      }
+    ],
+    "status": "In Development"
+  },
+  {
+    "id": 5,
+    "title": "Travel App",
+    "description": "A mobile app for planning and organizing travel itineraries.",
+    "url": "https://example.com/travel-app",
+    "technologies": ["React Native", "Firebase"],
+    "tags": ["mobile apps dev", "travel"],
+    "image": "/assets/travel-app.png",
+    "githubRepo": null,
+    "liveDemo": {
+      "url": "https://example.com/travel-app-demo"
+    },
+    "startDate": "2022-05-15",
+    "endDate": "2022-10-31",
+    "teamMembers": [
+      {
+        "name": "William Johnson",
+        "role": "Mobile App Developer"
+      }
+    ],
+    "status": "Completed"
+  },
+  {
+    "id": 6,
+    "title": "Restaurant Management System",
+    "description": "A web-based system for managing restaurant operations.",
+    "url": "https://example.com/restaurant-system",
+    "technologies": ["React", "Node.js", "MongoDB"],
+    "tags": ["web", "frontend", "backend"],
+    "image": "/assets/restaurant-system.png",
+    "githubRepo": "https://github.com/your-username/restaurant-system",
+    "liveDemo": null,
+    "startDate": "2022-06-01",
+    "endDate": "2022-08-31",
+    "teamMembers": [
+      {
+        "name": "Daniel Wilson",
+        "role": "Full-stack Developer"
+      },
+      {
+        "name": "Emily Taylor",
+        "role": "Database Administrator"
+      }
+    ],
+    "status": "Started"
+  }
+]
