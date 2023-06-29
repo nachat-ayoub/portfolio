@@ -4,7 +4,7 @@ import Title from '../components/Title';
 import React from 'react';
 
 interface IProjectProps {
-  project: IProject;
+  project: IProject; 
 }
 
 const Project: React.FC = () => {
