@@ -15,7 +15,11 @@ const Project: React.FC = () => {
         <Title content={project?.title} />
         <p>{project?.description}</p>
         <div className='w-full'>
-          <img src={project?.image} alt={project?.title} />
+          <img
+            className='w-full object-cover'
+            src={project?.image}
+            alt={project?.title}
+          />
         </div>
       </div>
     </div>
