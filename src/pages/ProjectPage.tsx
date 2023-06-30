@@ -2,9 +2,10 @@ import { useLoaderData } from 'react-router-dom';
 import { IProject } from '../data/types';
 import Title from '../components/Title';
 import React from 'react';
+import ReadmePreview from '../components/ReadmePreview';
 
 interface IProjectProps {
-  project: IProject; 
+  project: IProject;
 }
 
 const Project: React.FC = () => {
@@ -21,6 +22,9 @@ const Project: React.FC = () => {
             alt={project?.title}
           />
         </div>
+
+        {/* Readme */}
+        {project?.githubRepo && <ReadmePreview repoUrl={project.githubRepo} />}
       </div>
     </div>
   );
