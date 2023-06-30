@@ -60,7 +60,7 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
         setReadmeContent(markdownContent);
       } catch (_error: any) {
         setError(_error);
-        console.error('Error fetching README.md', _error);
+        console.error('==> Error fetching README.md', _error);
       }
     };
 
