@@ -1,5 +1,6 @@
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import React, { useEffect, useState } from 'react';
+import emojiRemarkPlugin from 'remark-emoji';
 
 interface IReadmePreviewProps {
   repoUrl: string;
@@ -11,7 +12,6 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
   mode = 'light',
 }) => {
   const [readmeContent, setReadmeContent] = useState('');
-
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -47,20 +47,83 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
         const response = await fetch(
           `https://api.github.com/repos/${repoOwner}/${repoName}/readme`
         );
-        const data = await response.json();
 
-        // Get the content of the README.md file
-        const readmeContentBase64 = data.content;
-        const decodedContent = atob(readmeContentBase64);
-        const markdownContent = decodeURIComponent(decodedContent);
+        if (response.status === 200) {
+          const data = await response.json();
 
-        // Convert the Markdown content to HTML
-        // const htmlContent = DOMPurify.sanitize(marked.parse(markdownContent));
-        // setReadmeContent(htmlContent);
-        setReadmeContent(markdownContent);
-      } catch (_error: any) {
-        setError(_error);
-        console.error('==> Error fetching README.md', _error);
+          // Get the content of the README.md file
+          const readmeContentBase64 = data.content;
+          const decodedContent = atob(readmeContentBase64);
+          const decodedArray = Uint8Array.from(decodedContent, (c) =>
+            c.charCodeAt(0)
+          ); // Convert decoded content to Uint8Array
+
+          // Get the default branch name from the URL
+          const branchName = new URL(data.url).searchParams.get('ref');
+
+          let markdownContent = new TextDecoder('utf-8').decode(decodedArray);
+
+          markdownContent = markdownContent.replace(
+            /(<img\s+src="|!\[.*?\]\()((\/?[^"\s?]+)(\?[^"\s]+)?)"/g,
+            (_, prefix, relativePath, query) => {
+              const normalizedPath = relativePath.replace(/^\//, '');
+              const imageUrl = `${repoUrl}/blob/${branchName}/${normalizedPath}${
+                query || ''
+              }`;
+              return `${prefix}${imageUrl}"`;
+            }
+          );
+
+          // For HTML img tags
+          markdownContent = markdownContent.replace(
+            /(<img\s+src=")([^"\s]+)"/g,
+            (_, prefix, imagePath, suffix) => {
+              const isRelative =
+                !imagePath.startsWith('http') && !imagePath.startsWith('/');
+
+              const imageUrl = isRelative
+                ? `${repoUrl}/blob/${branchName}/${imagePath.replace(
+                    /^\//,
+                    ''
+                  )}${suffix || ''}`
+                : imagePath;
+
+              // const imageUrl = isRelative ? `/assetREADME.md/${imagePath}` : imagePath;
+              return `${prefix}${imageUrl}"`;
+            }
+          );
+
+          // For Markdown image syntax
+          markdownContent = markdownContent.replace(
+            /(\[.*?\]\()([^"\s]+)(\))/g,
+            (_, prefix, imagePath, suffix) => {
+              const isRelative =
+                !imagePath.startsWith('http') && !imagePath.startsWith('/');
+
+              const imageUrl = isRelative
+                ? `${repoUrl}/blob/${branchName}/${imagePath.replace(
+                    /^\//,
+                    ''
+                  )}${suffix || ''}`
+                : imagePath;
+
+              // const imageUrl = isRelative
+              //   ? `/assetREADME.md/${imagePath}`
+              //   : imagePath;
+              return `${prefix}${imageUrl}${suffix}`;
+            }
+          );
+
+          console.log(markdownContent);
+
+          setReadmeContent(markdownContent);
+        } else {
+          setError(
+            'This Project README.md does not exists, or someting went wrong.'
+          );
+        }
+      } catch (_error) {
+        console.log(_error);
       }
     };
 
@@ -68,8 +131,19 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
   }, [repoUrl]);
 
   return (
-    <div data-color-mode={mode} className='w-full'>
-      {error ? <div>{error}</div> : <MarkdownPreview source={readmeContent} />}
+    <div className='w-full'>
+      {error !== null ? (
+        <div>{error}</div>
+      ) : (
+        <MarkdownPreview
+          className='MarkdownPreview bg-inherit'
+          source={readmeContent}
+          remarkPlugins={[emojiRemarkPlugin]}
+          wrapperElement={{
+            'data-color-mode': mode,
+          }}
+        />
+      )}
     </div>
   );
 };

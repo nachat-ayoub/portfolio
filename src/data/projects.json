@@ -17,7 +17,7 @@
       "REST API"
     ],
     "image": "/assets/ecommerce.png",
-    "githubRepo": "https://github.com/your-username/ecommerce",
+    "githubRepo": "https://github.com/hasan-py/MERN_Stack_Project_Ecommerce_Hayroo",
     "liveDemo": {
       "url": "https://example.com/ecommerce-demo"
     },
@@ -43,7 +43,7 @@
     "technologies": ["Unity", "C#"],
     "tags": ["game dev", "multiplayer"],
     "image": "/assets/game.png",
-    "githubRepo": "https://github.com/your-username/game",
+    "githubRepo": "https://github.com/fogleman/Craft",
     "liveDemo": null,
     "startDate": "2022-02-01",
     "endDate": "2022-06-30",
@@ -67,7 +67,7 @@
     "technologies": ["React Native", "Firebase"],
     "tags": ["mobile apps dev", "social media"],
     "image": "/assets/social-media-app.png",
-    "githubRepo": null,
+    "githubRepo": "https://github.com/lensterxyz/lenster",
     "liveDemo": {
       "url": "https://example.com/social-media-app-demo"
     },
@@ -89,7 +89,7 @@
     "technologies": ["React", "Node.js", "MongoDB"],
     "tags": ["web", "frontend", "backend"],
     "image": "/assets/real-estate.png",
-    "githubRepo": "https://github.com/your-username/real-estate",
+    "githubRepo": null,
     "liveDemo": {
       "url": "https://example.com/real-estate-demo"
     },
@@ -115,7 +115,7 @@
     "technologies": ["React Native", "Firebase"],
     "tags": ["mobile apps dev", "travel"],
     "image": "/assets/travel-app.png",
-    "githubRepo": null,
+    "githubRepo": "https://github.com/JideGuru/FlutterTravel",
     "liveDemo": {
       "url": "https://example.com/travel-app-demo"
     },
@@ -137,8 +137,8 @@
     "technologies": ["React", "Node.js", "MongoDB"],
     "tags": ["web", "frontend", "backend"],
     "image": "/assets/restaurant-system.png",
-    "githubRepo": "https://github.com/your-username/restaurant-system",
-    "liveDemo": null,
+    "githubRepo": "https://github.com/ChaoningZhang/MobileSAM",
+    "liveDemo": "https://github.com/tastyigniter/TastyIgniter",
     "startDate": "2022-06-01",
     "endDate": "2022-08-31",
     "teamMembers": [
