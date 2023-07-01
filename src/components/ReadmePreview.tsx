@@ -63,21 +63,10 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
 
           let markdownContent = new TextDecoder('utf-8').decode(decodedArray);
 
-          markdownContent = markdownContent.replace(
-            /(<img\s+src="|!\[.*?\]\()((\/?[^"\s?]+)(\?[^"\s]+)?)"/g,
-            (_, prefix, relativePath, query) => {
-              const normalizedPath = relativePath.replace(/^\//, '');
-              const imageUrl = `${repoUrl}/blob/${branchName}/${normalizedPath}${
-                query || ''
-              }`;
-              return `${prefix}${imageUrl}"`;
-            }
-          );
-
           // For HTML img tags
           markdownContent = markdownContent.replace(
             /(<img\s+src=")([^"\s]+)"/g,
-            (_, prefix, imagePath, suffix) => {
+            (_, prefix, imagePath) => {
               const isRelative =
                 !imagePath.startsWith('http') && !imagePath.startsWith('/');
 
@@ -85,7 +74,7 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
                 ? `${repoUrl}/blob/${branchName}/${imagePath.replace(
                     /^\//,
                     ''
-                  )}${suffix || ''}`
+                  )}?raw=true`
                 : imagePath;
 
               // const imageUrl = isRelative ? `/assetREADME.md/${imagePath}` : imagePath;
@@ -96,7 +85,7 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
           // For Markdown image syntax
           markdownContent = markdownContent.replace(
             /(\[.*?\]\()([^"\s]+)(\))/g,
-            (_, prefix, imagePath, suffix) => {
+            (_, prefix, imagePath) => {
               const isRelative =
                 !imagePath.startsWith('http') && !imagePath.startsWith('/');
 
@@ -104,13 +93,13 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
                 ? `${repoUrl}/blob/${branchName}/${imagePath.replace(
                     /^\//,
                     ''
-                  )}${suffix || ''}`
+                  )}?raw=true`
                 : imagePath;
 
               // const imageUrl = isRelative
               //   ? `/assetREADME.md/${imagePath}`
               //   : imagePath;
-              return `${prefix}${imageUrl}${suffix}`;
+              return `${prefix}${imageUrl}`;
             }
           );
 
