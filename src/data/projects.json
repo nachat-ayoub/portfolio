@@ -1,180 +1,76 @@
 [
   {
     "id": 1,
-    "title": "E-commerce Website",
-    "description": "A fully functional e-commerce website built with React, Redux, and Node.js.",
-    "url": "https://example.com/ecommerce",
-    "technologies": ["React", "Redux", "Node.js", "MongoDB"],
+    "title": "Netflix Clone",
+    "description": "A Netflix clone built with React.js, Sass, and TMDB API.",
+    "tags": ["web", "frontend", "React.js", "Sass", "REST API", "TMDB API"],
+    "image": "https://res.cloudinary.com/nachatayoub/image/upload/w_600/v1660487693/image_ff5edde1cd.png",
+    "githubRepo": "https://github.com/nachat-ayoub/Netflix-Clone",
+    "liveDemo": "https://netflixclone-ayoub.web.app/",
+    "startDate": "2022-08-10",
+    "endDate": "2022-08-15",
+    "status": "Completed"
+  },
+  {
+    "id": 2,
+    "title": "Todo App",
+    "description": "This project was made just for practicing purposes and that's mean it's not a professional design layout at all have a look at the source code down below. and leave a star if you like.",
+    "tags": [
+      "web",
+      "frontend",
+      "React.js",
+      "Sass",
+      "Redux",
+      "Redux Toolkit",
+      "LocalStorage"
+    ],
+    "image": "https://res.cloudinary.com/nachatayoub/image/upload/w_600/v1661105485/Screenshot_2022_08_21_at_19_10_15_React_App_0629d616e5.png",
+    "githubRepo": "https://github.com/nachat-ayoub/react-todo-app",
+    "liveDemo": "https://ayoub-react-todo-app.web.app/",
+    "startDate": "2022-08-18",
+    "endDate": "2022-08-25",
+    "status": "Completed"
+  },
+  {
+    "id": 3,
+    "title": "Rewayati - Light Novel Website",
+    "description": "Rewayati is a light novel website created with two versions (Next.js & Sveltekit).",
     "tags": [
       "web",
       "frontend",
       "backend",
-      "React",
-      "Redux",
-      "Node.js",
-      "MongoDB",
-      "Express.js",
-      "REST API"
+      "Next.js",
+      "Sveltekit",
+      "Tailwind css"
     ],
-    "image": "/assets/ecommerce.png",
-    "githubRepo": "https://github.com/hasan-py/MERN_Stack_Project_Ecommerce_Hayroo",
-    "liveDemo": {
-      "url": "https://example.com/ecommerce-demo"
-    },
-    "startDate": "2022-01-01",
-    "endDate": "2022-03-31",
-    "teamMembers": [
-      {
-        "name": "John Doe",
-        "role": "Frontend Developer"
-      },
-      {
-        "name": "Jane Smith",
-        "role": "Backend Developer"
-      }
-    ],
-    "status": "In Development"
-  },
-  {
-    "id": 2,
-    "title": "Multiplayer Game",
-    "description": "A multiplayer online game built with Unity and C#.",
-    "url": "https://example.com/game",
-    "technologies": ["Unity", "C#"],
-    "tags": ["game dev", "multiplayer"],
-    "image": "/assets/game.png",
-    "githubRepo": "https://github.com/fogleman/Craft",
-    "liveDemo": null,
-    "startDate": "2022-02-01",
-    "endDate": "2022-06-30",
-    "teamMembers": [
-      {
-        "name": "Alex Johnson",
-        "role": "Game Developer"
-      },
-      {
-        "name": "Olivia Davis",
-        "role": "Game Designer"
-      }
-    ],
-    "status": "Started"
-  },
-  {
-    "id": 3,
-    "title": "Social Media App",
-    "description": "A mobile app for connecting people and sharing updates.",
-    "url": "https://example.com/social-media-app",
-    "technologies": ["React Native", "Firebase"],
-    "tags": ["mobile apps dev", "social media"],
-    "image": "/assets/social-media-app.png",
-    "githubRepo": "https://github.com/lensterxyz/lenster",
-    "liveDemo": {
-      "url": "https://example.com/social-media-app-demo"
-    },
-    "startDate": "2022-03-15",
-    "endDate": "2022-08-31",
-    "teamMembers": [
-      {
-        "name": "Sophia Johnson",
-        "role": "Mobile App Developer"
-      }
-    ],
+    "image": "https://res.cloudinary.com/nachatayoub/image/upload/w_600/v1662248611/large_Screenshot_2022_09_04_at_00_39_09_https_rewayati_vercel_app_bb8d71bb04.png",
+    "githubRepo": "https://github.com/nachat-ayoub/Rewayati",
+    "liveDemo": "https://rewayati.vercel.app/",
+    "startDate": "2022-09-03",
+    "endDate": "2022-09-20",
     "status": "Completed"
   },
   {
     "id": 4,
-    "title": "Real Estate Website",
-    "description": "A website for browsing and searching real estate properties.",
-    "url": "https://example.com/real-estate",
-    "technologies": ["React", "Node.js", "MongoDB"],
-    "tags": ["web", "frontend", "backend"],
-    "image": "/assets/real-estate.png",
-    "githubRepo": null,
-    "liveDemo": {
-      "url": "https://example.com/real-estate-demo"
-    },
-    "startDate": "2022-04-01",
-    "endDate": "2022-06-30",
-    "teamMembers": [
-      {
-        "name": "Michael Brown",
-        "role": "Frontend Developer"
-      },
-      {
-        "name": "Emma Davis",
-        "role": "Backend Developer"
-      }
+    "title": "MitAnime - Anime Website",
+    "description": "MitAnime is an anime website for arabic translated anime, created using MERN Stack.",
+    "tags": [
+      "web",
+      "frontend",
+      "backend",
+      "Mongodb",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "MERN Stack",
+      "Web Scraping",
+      "Sass"
     ],
-    "status": "In Development"
-  },
-  {
-    "id": 5,
-    "title": "Travel App",
-    "description": "A mobile app for planning and organizing travel itineraries.",
-    "url": "https://example.com/travel-app",
-    "technologies": ["React Native", "Firebase"],
-    "tags": ["mobile apps dev", "travel"],
-    "image": "/assets/travel-app.png",
-    "githubRepo": "https://github.com/JideGuru/FlutterTravel",
-    "liveDemo": {
-      "url": "https://example.com/travel-app-demo"
-    },
-    "startDate": "2022-05-15",
-    "endDate": "2022-10-31",
-    "teamMembers": [
-      {
-        "name": "William Johnson",
-        "role": "Mobile App Developer"
-      }
-    ],
+    "image": "https://res.cloudinary.com/nachatayoub/image/upload/w_600/v1660565985/image_7437dcd30d.png",
+    "githubRepo": "https://github.com/nachat-ayoub/MitAnime",
+    "liveDemo": "https://mitanime.netlify.app/",
+    "startDate": "2022-09-22",
+    "endDate": "2022-09-29",
     "status": "Completed"
-  },
-  {
-    "id": 6,
-    "title": "Restaurant Management System",
-    "description": "A web-based system for managing restaurant operations.",
-    "url": "https://example.com/restaurant-system",
-    "technologies": ["React", "Node.js", "MongoDB"],
-    "tags": ["web", "frontend", "backend"],
-    "image": "/assets/restaurant-system.png",
-    "githubRepo": "https://github.com/ChaoningZhang/MobileSAM",
-    "liveDemo": "https://github.com/tastyigniter/TastyIgniter",
-    "startDate": "2022-06-01",
-    "endDate": "2022-08-31",
-    "teamMembers": [
-      {
-        "name": "Daniel Wilson",
-        "role": "Full-stack Developer"
-      },
-      {
-        "name": "Emily Taylor",
-        "role": "Database Administrator"
-      }
-    ],
-    "status": "Started"
-  },
-  {
-    "id": 7,
-    "title": "Test App",
-    "description": "Test App hhhhhhhhhhhhhhhhhhh.",
-    "url": "https://example.com/restaurant-system",
-    "technologies": ["React", "Node.js", "MongoDB"],
-    "tags": ["web", "frontend", "backend"],
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6jIvcdA9R4N8DzyEURcbH-wDMQHX0ezHeJQ&usqp=CAU",
-    "githubRepo": "https://github.com/ChaoningZhang/MobileSAM",
-    "liveDemo": "https://github.com/tastyigniter/TastyIgniter",
-    "startDate": "2022-06-01",
-    "endDate": "2022-08-31",
-    "teamMembers": [
-      {
-        "name": "Daniel Wilson",
-        "role": "Full-stack Developer"
-      },
-      {
-        "name": "Emily Taylor",
-        "role": "Database Administrator"
-      }
-    ],
-    "status": "Started"
   }
 ]

@@ -1,9 +1,11 @@
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import React, { useEffect, useState } from 'react';
+import { IconContext } from 'react-icons';
+import { FaCircleExclamation } from 'react-icons/fa6';
 import emojiRemarkPlugin from 'remark-emoji';
 
 interface IReadmePreviewProps {
-  repoUrl: string;
+  repoUrl: string | null;
   mode?: 'light' | 'dark';
 }
 
@@ -36,13 +38,15 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
 
     const fetchReadme = async () => {
       try {
+        if (!repoUrl) return setError('This Project does not have a README.md');
+
         const { repoOwner, repoName } = extractRepoInfo(repoUrl);
 
-        console.log({
-          repoOwner,
-          repoName,
-          url: `https://api.github.com/repos/${repoOwner}/${repoName}/readme`,
-        });
+        // console.log({
+        //   repoOwner,
+        //   repoName,
+        //   url: `https://api.github.com/repos/${repoOwner}/${repoName}/readme`,
+        // });
 
         const response = await fetch(
           `https://api.github.com/repos/${repoOwner}/${repoName}/readme`
@@ -77,29 +81,20 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
                   )}?raw=true`
                 : imagePath;
 
-              // const imageUrl = isRelative ? `/assetREADME.md/${imagePath}` : imagePath;
               return `${prefix}${imageUrl}"`;
             }
           );
 
           // For Markdown image syntax
           markdownContent = markdownContent.replace(
-            /(\[.*?\]\()([^"\s]+)(\))/g,
-            (_, prefix, imagePath) => {
+            /!\[(.*?)\]\(((?!http)(?!\/)[^"\s]+)\)/g,
+            (_, altText, imagePath) => {
               const isRelative =
                 !imagePath.startsWith('http') && !imagePath.startsWith('/');
-
               const imageUrl = isRelative
-                ? `${repoUrl}/blob/${branchName}/${imagePath.replace(
-                    /^\//,
-                    ''
-                  )}?raw=true`
+                ? `${repoUrl}/blob/${branchName}/${imagePath}`
                 : imagePath;
-
-              // const imageUrl = isRelative
-              //   ? `/assetREADME.md/${imagePath}`
-              //   : imagePath;
-              return `${prefix}${imageUrl}`;
+              return `![${altText}](${imageUrl})`;
             }
           );
 
@@ -120,9 +115,15 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
   }, [repoUrl]);
 
   return (
-    <div className='w-full'>
+    <div className='w-full my-6'>
       {error !== null ? (
-        <div>{error}</div>
+        <div className='flex items-center gap-x-2'>
+          <IconContext.Provider value={{ size: '20' }}>
+            <FaCircleExclamation />
+          </IconContext.Provider>
+
+          <span className=''>{error}</span>
+        </div>
       ) : (
         <MarkdownPreview
           className='MarkdownPreview bg-inherit'

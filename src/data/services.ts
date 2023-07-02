@@ -6,58 +6,52 @@ const projects = projectsJsonData as IProject[];
 export interface IProjectData {
   projects: IProject[];
   tags: string[];
-  technologies: string[];
-  teamMembers: string[];
   status: string[];
 }
 
 export function getProjects(filter?: IProjectsFilter | null): IProjectData {
+  const tags = [...new Set(projects.flatMap((project) => project.tags))];
+  const status = [...new Set(projects.map((project) => project.status))];
+
   const filteredProjects = filter
     ? projects.filter((project) => filterProjects(project, filter))
     : projects;
-  const tags = [...new Set(projects.flatMap((project) => project.tags))];
-  const technologies = [
-    ...new Set(projects.flatMap((project) => project.technologies)),
-  ];
-  const teamMembers = [
-    ...new Set(
-      projects.flatMap((project) =>
-        project.teamMembers.map((member) => member.name)
-      )
-    ),
-  ];
-  const status = [...new Set(projects.map((project) => project.status))];
+
+  const sortBy = 'startDate';
+  const sortOrder: number = -1;
+
+  const sortedProjects =
+    filteredProjects.length > 1
+      ? filteredProjects.sort((a, b) => {
+          if (a[sortBy] < b[sortBy]) {
+            return sortOrder === 1 ? -1 : 1;
+          }
+          if (a[sortBy] > b[sortBy]) {
+            return sortOrder === 1 ? 1 : -1;
+          }
+          return 0;
+        })
+      : filteredProjects;
 
   return {
-    projects: filteredProjects,
+    projects: sortedProjects,
     tags,
-    technologies,
-    teamMembers,
     status,
   };
 }
 
-export function getProjectById(id: number): IProject {
-  const [project] = projects.filter((_project) =>
-    filterProjects(_project, { id })
-  );
+export function getProjectById(id: number) {
+  const project = projects.find((_project) => _project.id === id);
 
   return project;
 }
 
 function filterProjects(project: IProject, filter: IProjectsFilter): boolean {
-  const { id, technologies, tags, title, teamMember, status } = filter;
+  const { id, tags, title, status } = filter;
 
   // Filter by id
   if (id && id > 0 && project.id !== id) {
     return false;
-  }
-
-  // Filter by technologies
-  if (technologies && technologies.length > 0) {
-    if (!technologies.every((tech) => project.technologies.includes(tech))) {
-      return false;
-    }
   }
 
   // Filter by tags
@@ -69,16 +63,6 @@ function filterProjects(project: IProject, filter: IProjectsFilter): boolean {
 
   // Filter by title
   if (title && !project.title.toLowerCase().includes(title.toLowerCase())) {
-    return false;
-  }
-
-  // Filter by teamMember
-  if (
-    teamMember &&
-    !project.teamMembers.some((member) =>
-      member.name.toLowerCase().includes(teamMember.toLowerCase())
-    )
-  ) {
     return false;
   }
 
