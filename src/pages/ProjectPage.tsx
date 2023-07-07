@@ -67,16 +67,18 @@ function ProjectNavigation() {
   };
 
   return (
-    <section className='p-4 md:p-6 flex justify-between'>
+    <section className='p-4 md:p-6 flex flex-col md:flex-row justify-between gap-4'>
       {/* //* Back Button */}
-      <Button color='secondary' href='/'>
-        <IconContext.Provider value={{ size: '25' }}>
-          <FaAngleLeft />
-        </IconContext.Provider>
-      </Button>
+      <div className='w-fit'>
+        <Button color='secondary' href='/'>
+          <IconContext.Provider value={{ size: '25' }}>
+            <FaAngleLeft />
+          </IconContext.Provider>
+        </Button>
+      </div>
 
       {/* //* Social links */}
-      <div className='flex w-fit gap-2'>
+      <div className='w-full md:w-fit flex justify-between md:justify-start gap-2'>
         <Button color='slate' target='_blank' href={info.github}>
           <IconContext.Provider value={{ size: '25' }}>
             <TbBrandGithubFilled />
@@ -115,7 +117,7 @@ function ProjectNavigation() {
 
 function ProjectLinks({ project }: { project: IProject }) {
   return (
-    <div className='flex justify-between'>
+    <div className='flex gap-4 justify-between flex-col md:flex-row'>
       <Button target='_blank' href={project.liveDemo ?? '#'}>
         <IconContext.Provider value={{ size: '18' }}>
           <div className='mr-2'>

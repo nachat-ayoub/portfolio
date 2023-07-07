@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import ProjectsList from '../components/ProjectsList';
 import Title from '../components/Title';
+import WindowSize from '../components/WindowSize';
 
 interface IHomeProps {}
 
@@ -23,17 +24,8 @@ const Home: React.FC<IHomeProps> = () => {
 
   return (
     <div className='min-h-screen bg-gray-50 text-gray-900'>
-      <div className='py-4 px-2 md:px-10 flex flex-col gap-y-6'>
+      <div className='w-full py-4 px-3 md:px-10 flex flex-col gap-y-6'>
         <Title content='Projects' />
-
-        {/* <div className=''>
-        <span className='text-lg sm:hidden'>xs</span>
-        <span className='text-lg hidden sm:inline-block md:hidden'>sm</span>
-        <span className='text-lg hidden md:inline-block lg:hidden'>md</span>
-        <span className='text-lg hidden lg:inline-block xl:hidden'>lg</span>
-        <span className='text-lg hidden xl:inline-block 2xl:hidden'>xl</span>
-        <span className='text-lg hidden 2xl:inline-block'>2xl</span>
-      </div> */}
 
         <SearchBar
           setSearchFilters={(filter?: IProjectsFilter | null) => {
@@ -47,6 +39,9 @@ const Home: React.FC<IHomeProps> = () => {
           searchFilters={searchFilters}
           setSearchFilters={setSearchFilters}
         />
+
+        {/* //! Just For Responsive testing */}
+        {/* <WindowSize /> */}
 
         <ProjectsList projects={data?.projects} />
       </div>

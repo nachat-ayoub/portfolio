@@ -112,23 +112,12 @@ const variants = {
   },
 };
 
-// const variants: any = {};
-
-// for (const variantName in variantsDif) {
-//   const variantColor = variantsDif[variantName as keyof typeof variantsDif];
-//   variants[variantName] = {
-//     bg: `bg-${variantColor}-500 hover:bg-${variantColor}-600`,
-//     border: `bg-${variantColor}-700`,
-//   };
-// }
-
-// console.log(variants);
-
 interface IButtonProps {
   children?: React.ReactNode;
   color?: keyof typeof variants;
   href?: string;
   target?: React.HTMLAttributeAnchorTarget;
+  fit?: boolean;
 }
 
 const Button: React.FC<IButtonProps> = ({
@@ -136,40 +125,43 @@ const Button: React.FC<IButtonProps> = ({
   href,
   target,
   children,
+  fit = true,
 }) => {
   return (
-    <div className='z-10 relative w-fit'>
+    <div className={`${!fit && 'w-full'} md:w-fit z-10 relative`}>
       {href ? (
         <Link to={href} target={href === '#' ? '_self' : target}>
-          <button
-            className={`uppercase flex items-center text-sm text-white font-bold tracking-wider px-5 py-2 shadow rounded hover:translate-y-[1px] transition ${variants[color].bg}`}
-          >
-            {children}
-          </button>
-          <span
-            className={
-              '-z-10 absolute left-0 -bottom-1 w-full h-2 rounded-b ' +
-              variants[color].border
-            }
-          ></span>
+          <ButtonContent color={color}>{children}</ButtonContent>
         </Link>
       ) : (
-        <>
-          <button
-            className={`uppercase flex items-center text-sm text-white font-bold tracking-wider px-5 py-2 shadow rounded hover:translate-y-[1px] transition ${variants[color].bg}`}
-          >
-            {children}
-          </button>
-          <span
-            className={
-              '-z-10 absolute left-0 -bottom-1 w-full h-2 rounded-b ' +
-              variants[color].border
-            }
-          ></span>
-        </>
+        <ButtonContent color={color}>{children}</ButtonContent>
       )}
     </div>
   );
 };
 
 export default Button;
+
+function ButtonContent({
+  children,
+  color,
+}: {
+  children: IButtonProps['children'];
+  color: keyof typeof variants;
+}) {
+  return (
+    <>
+      <button
+        className={`w-full justify-center md:w-fit uppercase flex items-center text-xs md:text-sm text-white font-bold tracking-wider px-3 md:px-5 py-2 shadow rounded hover:translate-y-[1px] transition ${variants[color].bg}`}
+      >
+        {children}
+      </button>
+      <span
+        className={
+          '-z-10 absolute left-0 -bottom-1 w-full h-2 rounded-b ' +
+          variants[color].border
+        }
+      ></span>
+    </>
+  );
+}

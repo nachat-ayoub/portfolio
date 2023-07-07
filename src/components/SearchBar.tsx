@@ -50,12 +50,12 @@ export default function SearchBar({ setSearchFilters, searchFilters }: IProps) {
           }
           value={searchFilters?.title ?? ''}
         />
-        <button
+        {/* <button
           type='submit'
           className='text-white absolute right-2.5 bottom-2.5 bg-primary hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm px-4 py-2 transition'
         >
           Search
-        </button>
+        </button> */}
       </div>
     </form>
   );
