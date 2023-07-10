@@ -26,7 +26,7 @@
     ],
     "image": "https://res.cloudinary.com/nachatayoub/image/upload/w_600/v1661105485/Screenshot_2022_08_21_at_19_10_15_React_App_0629d616e5.png",
     "githubRepo": "https://github.com/nachat-ayoub/react-todo-app",
-    "liveDemo": "https://ayoub-todo-app.netlify.app/",
+    "liveDemo": "https://ayoub-todo-app.netlify.app",
     "startDate": "2022-08-18",
     "endDate": "2022-08-25",
     "status": "Completed"
