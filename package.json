@@ -17,6 +17,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@uidotdev/usehooks": "^2.0.1",
     "@uiw/react-markdown-preview": "^4.1.13",
     "framer-motion": "^10.12.17",
     "localforage": "^1.10.0",

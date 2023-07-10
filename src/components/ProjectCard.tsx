@@ -1,13 +1,12 @@
-import { Link } from 'react-router-dom';
 import { IProject } from '../data/types';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useHover } from '../services/hooks';
+// import { useHover } from '@uidotdev/usehooks';
 
 const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
-  const [isHovered, setIsHovered] = useState(true);
-
-  const handleHover = () => setIsHovered(true);
-  const handleHoverEnd = () => setIsHovered(false);
+  // const [hoverRef, isHovered] = useHover();
+  const { isHovered } = useHover();
 
   return (
     <Link title={project.title} to={`/projects/${project.id}`}>
@@ -31,26 +30,56 @@ const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
             {project.title}
           </div>
         </div>
-        <div className='overflow-hidden group relative w-full h-64 md:h-48 lg:h-64'>
-          <motion.div
+        <div
+          // Hereeeeeeeeeeee
+          className='overflow-hidden group relative w-full h-64 md:h-48 lg:h-64'
+        >
+          <div
+            // initial={'rest'}
+            // whileHover={'hover'}
+            // whileFocus={'hover'}
+            // whileInView={'hover'}
+            // ref={hoverRef}
             className='-translate-y-full group-hover:translate-y-0 transition absolute h-full w-full top-0 left-0 bg-black/60 shadow-[0_0_150px_rgba(0,0,0,.75)_inset] flex justify-center items-center'
-            onMouseEnter={handleHover}
-            onMouseLeave={handleHoverEnd}
-            initial={'rest'}
-            whileHover={'hover'}
           >
-            <ul className='flex justify-center flex-wrap gap-2 p-4'>
-              {project.tags.map((tag, index) => (
-                <motion.li
-                  key={tag}
-                  variants={{
-                    rest: {
+            <ul
+              // initial={'rest'}
+              // whileHover={'hover'}
+              // whileFocus={'hover'}
+              className='flex justify-center flex-wrap gap-2 p-4'
+            >
+              {isHovered &&
+                project.tags.map((tag, index) => (
+                  <motion.li
+                    key={tag}
+                    // variants={{
+                    //   rest: {
+                    //     y: 10,
+                    //     scaleY: 1,
+                    //     opacity: 0,
+                    //     transformOrigin: 'bottom',
+                    //   },
+                    //   hover: {
+                    //     transformOrigin: 'bottom',
+                    //     y: [-10, 10, 0],
+                    //     opacity: 1,
+                    //     scaleY: [1, 0.8, 1],
+                    //     transition: {
+                    //       duration: 0.2,
+                    //       delay: index * 0.03,
+                    //       scaleY: { duration: 0.3 },
+                    //       opacity: { duration: 0.1 },
+                    //     },
+                    //   },
+                    // }}
+
+                    initial={{
                       y: 10,
                       scaleY: 1,
                       opacity: 0,
                       transformOrigin: 'bottom',
-                    },
-                    hover: {
+                    }}
+                    animate={{
                       transformOrigin: 'bottom',
                       y: [-10, 10, 0],
                       opacity: 1,
@@ -61,15 +90,14 @@ const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
                         scaleY: { duration: 0.3 },
                         opacity: { duration: 0.1 },
                       },
-                    },
-                  }}
-                  className='tag active rounded-sm font-bold'
-                >
-                  {tag}
-                </motion.li>
-              ))}
+                    }}
+                    className='tag active rounded-sm font-bold'
+                  >
+                    {tag}
+                  </motion.li>
+                ))}
             </ul>
-          </motion.div>
+          </div>
 
           <img
             className='w-full h-full object-cover rounded-b-sm shadow'
