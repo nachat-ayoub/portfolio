@@ -29,7 +29,7 @@ const TestCardAnimation: React.FC<ITestCardAnimationProps> = () => {
           className='w-full h-full object-cover'
           src='/assets/ecommerce.png'
           alt='Travel App'
-        />
+        /> 
       </div>
     </div>
   );

@@ -16,6 +16,11 @@
   .MarkdownPreview li {
     @apply relative before:content-["●"] before:absolute before:-left-5 before:-top-0.5;
   }
+  input,
+  textarea,
+  select {
+    @apply transition border border-gray-200 rounded-sm focus:outline-none ring-blue-300/60 focus:ring-4;
+  }
 }
 
 @keyframes slideIn {

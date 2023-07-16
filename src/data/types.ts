@@ -1,5 +1,12 @@
 // * Projects Types :
 
+const ProjectStatusKeys = {
+  Started: null,
+  'In Development': null,
+  Completed: null,
+};
+export const ProjectStatus = Object.keys(ProjectStatusKeys);
+
 export interface IProject {
   id: number;
   title: string;
@@ -10,7 +17,7 @@ export interface IProject {
   liveDemo: string | null;
   startDate: string;
   endDate: string;
-  status: 'Started' | 'In Development' | 'Completed'; // Add the project status field
+  status: keyof typeof ProjectStatusKeys; // Add the project status field
 }
 
 export interface IProjectsFilter {
