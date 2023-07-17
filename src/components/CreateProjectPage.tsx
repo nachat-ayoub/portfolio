@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { IProject, ProjectStatus } from '../data/types';
 import { MultiSelect } from 'react-multi-select-component';
-
-const tagsOptions = ['Web', 'Frontend', 'Backend', 'React.js', 'Sass'];
+import { IProjectData } from '../data/services';
+import { useLoaderData } from 'react-router-dom';
 
 const ProjectCreationPage = () => {
+  const { projects, tags: tagsOptions } = useLoaderData() as IProjectData;
+
   const [formData, setFormData] = useState<
     Partial<IProject & { newTag: string }>
   >({
+    id: projects[0]?.id + 1 ?? 1,
     title: '',
     description: '',
     image: '',
@@ -47,32 +50,51 @@ const ProjectCreationPage = () => {
   };
 
   return (
-    <div className='p-6'>
+    <div className='p-6 bg-gray-100'>
       <h1 className='text-2xl font-bold mb-6'>Project Creation</h1>
       <form onSubmit={handleFormSubmit} className='mb-6'>
-        <div className='mb-4'>
-          <label htmlFor='title' className='block font-medium mb-2'>
-            Title:
-          </label>
-          <input
-            type='text'
-            id='title'
-            name='title'
-            value={formData.title}
-            onChange={handleInputChange}
-            className='w-full border-gray-300 rounded-md p-2'
-          />
+        <div className='grid grid-cols-2 md:grid-cols-12 gap-4'>
+          <div className='mb-4 col-span-12 md:col-span-2'>
+            <label htmlFor='id' className='block font-medium mb-2'>
+              Project ID:
+            </label>
+            <input
+              className='w-full border-gray-300 rounded-md p-2'
+              // onChange={handleInputChange}
+              disabled
+              value={formData.id}
+              name='id'
+              type='text'
+              id='id'
+              required
+            />
+          </div>
+          <div className='mb-4 col-span-12 md:col-span-10'>
+            <label htmlFor='title' className='block font-medium mb-2'>
+              Title:
+            </label>
+            <input
+              className='w-full border-gray-300 rounded-md p-2'
+              onChange={handleInputChange}
+              value={formData.title}
+              name='title'
+              type='text'
+              id='title'
+              required
+            />
+          </div>
         </div>
         <div className='mb-4'>
           <label htmlFor='description' className='block font-medium mb-2'>
             Description:
           </label>
           <textarea
-            id='description'
-            name='description'
-            value={formData.description}
-            onChange={handleInputChange}
             className='w-full border-gray-300 rounded-md p-2'
+            onChange={handleInputChange}
+            value={formData.description}
+            name='description'
+            id='description'
+            required
           ></textarea>
         </div>
 
@@ -119,12 +141,13 @@ const ProjectCreationPage = () => {
               Image:
             </label>
             <input
+              className='w-full border-gray-300 rounded-md p-2'
+              onChange={handleInputChange}
+              value={formData.image}
+              name='image'
               type='text'
               id='image'
-              name='image'
-              value={formData.image}
-              onChange={handleInputChange}
-              className='w-full border-gray-300 rounded-md p-2'
+              required
             />
           </div>
         </div>
@@ -165,12 +188,13 @@ const ProjectCreationPage = () => {
               Start Date:
             </label>
             <input
-              type='date'
-              id='startDate'
-              name='startDate'
+              className='w-full border-gray-300 rounded-md p-2'
               value={formData.startDate ?? ''}
               onChange={handleInputChange}
-              className='w-full border-gray-300 rounded-md p-2'
+              name='startDate'
+              id='startDate'
+              type='date'
+              required
             />
           </div>
           <div className='mb-4 w-full'>
@@ -188,10 +212,7 @@ const ProjectCreationPage = () => {
           </div>
         </div>
 
-        <button
-          type='submit'
-          className='bg-blue-500 text-white py-2 px-4 rounded-md'
-        >
+        <button className='block mx-auto mt-4 text-white text-center text-base bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-md px-8 py-3'>
           Create Project
         </button>
       </form>

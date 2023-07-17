@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ProjectPage from './pages/ProjectPage';
-import { getProjectById } from './data/services';
+import { getProjectById, getProjects } from './data/services';
 import TestCardAnimation from './components/TestCardAnimation';
 import CreateProjectPage from './components/CreateProjectPage';
 
@@ -26,9 +26,9 @@ function App() {
     {
       path: '/projects/create',
       element: <CreateProjectPage />,
-      loader: ({ params }: any) => {
-        const project = getProjectById(parseInt(params.projectId));
-        return { project };
+      loader: () => {
+        const projectData = getProjects();
+        return projectData;
       },
     },
   ]);

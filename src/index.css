@@ -16,6 +16,7 @@
   .MarkdownPreview li {
     @apply relative before:content-["●"] before:absolute before:-left-5 before:-top-0.5;
   }
+
   input,
   textarea,
   select {

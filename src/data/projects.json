@@ -72,5 +72,17 @@
     "startDate": "2022-09-22",
     "endDate": "2022-09-29",
     "status": "Completed"
+  },
+  {
+    "id": 5,
+    "title": "ISTA Presence",
+    "description": "Introducing ISTA Presence - A Project by the Talented Team of NACHAT Ayoub, ZAARAOUI Mustapha, ABODO Hatim, and OUAKILI Badreddine.\nWe are proud to present ISTA Presence, a website meticulously crafted using Laravel. Our goal was to create a convenient solution for teachers and the principal at ISTA(Specialized Institute of Applied Technologies) to efficiently track and record trainees' attendance. With ISTA Presence, teachers can effortlessly note the presence of trainees, while the principal can easily access and export weekly attendance data. Our project aims to streamline attendance management, enhancing efficiency and promoting a seamless learning environment at ISTA.",
+    "image": "https://i.imgur.com/A3V04uc.jpg",
+    "tags": ["Laravel", "PHP", "MySQL", "Tailwind css"],
+    "status": "Completed",
+    "githubRepo": "https://github.com/nachat-ayoub/absence-management",
+    "liveDemo": null,
+    "startDate": "2023-05-04",
+    "endDate": "2023-06-09"
   }
 ]
