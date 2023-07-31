@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import ProjectsList from '../components/ProjectsList';
 import Title from '../components/Title';
+import WindowSize from '../components/WindowSize';
 // import WindowSize from '../components/WindowSize';
 
 interface IHomeProps {}
@@ -41,7 +42,7 @@ const Home: React.FC<IHomeProps> = () => {
         />
 
         {/* //! Just For Responsive testing */}
-        {/* <WindowSize /> */}
+        <WindowSize />
 
         <ProjectsList projects={data?.projects} />
       </div>

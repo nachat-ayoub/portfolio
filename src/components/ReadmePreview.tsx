@@ -98,7 +98,7 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
             }
           );
 
-          console.log(markdownContent);
+          // console.log(markdownContent);
 
           setReadmeContent(markdownContent);
         } else {

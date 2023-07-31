@@ -77,7 +77,7 @@
     "id": 5,
     "title": "ISTA Presence",
     "description": "Introducing ISTA Presence - A Project by the Talented Team of NACHAT Ayoub, ZAARAOUI Mustapha, ABODO Hatim, and OUAKILI Badreddine.\nWe are proud to present ISTA Presence, a website meticulously crafted using Laravel. Our goal was to create a convenient solution for teachers and the principal at ISTA(Specialized Institute of Applied Technologies) to efficiently track and record trainees' attendance. With ISTA Presence, teachers can effortlessly note the presence of trainees, while the principal can easily access and export weekly attendance data. Our project aims to streamline attendance management, enhancing efficiency and promoting a seamless learning environment at ISTA.",
-    "image": "https://i.imgur.com/A3V04uc.jpg",
+    "image": "https://th.bing.com/th/id/R.d2ee4e314afa093265091bd73479f158?rik=fMXBIB231vht0g&riu=http%3a%2f%2fwww.kreilkamp.com%2fwp-content%2fuploads%2f2016%2f11%2fthumbnail-placeholder-500x334.jpg&ehk=6mynfmrw2mIh5dlQYM8Tv05IgOruDa3JOaJMJnvs0Yg%3d&risl=&pid=ImgRaw&r=0",
     "tags": ["Laravel", "PHP", "MySQL", "Tailwind css"],
     "status": "Completed",
     "githubRepo": "https://github.com/nachat-ayoub/absence-management",
