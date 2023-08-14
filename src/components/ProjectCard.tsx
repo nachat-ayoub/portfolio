@@ -1,7 +1,13 @@
 import { useHover } from '../utils/hooks';
-import { IProject } from '../data/types';
+import { IProject, ProjectStatusKeys } from '../data/types';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import {
+  FaCircleCheck,
+  FaCircleExclamation,
+  FaRocket,
+  FaScrewdriverWrench,
+} from 'react-icons/fa6';
 
 const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
   const [hoverRef, isHovered] = useHover();
@@ -77,6 +83,23 @@ const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
             src={project.image}
             alt={project.title}
           />
+
+          <div
+            className={`absolute top-1.5 right-1.5 text-white text-sm px-1.5 py-0.5 rounded shadow-md flex items-center gap-1.5 ${
+              ProjectStatusKeys[project.status]
+            }`}
+          >
+            {project.status === 'Started' ? (
+              <FaRocket />
+            ) : project.status === 'In Development' ? (
+              <FaScrewdriverWrench />
+            ) : project.status === 'Completed' ? (
+              <FaCircleCheck />
+            ) : (
+              <FaCircleExclamation />
+            )}
+            {project.status}
+          </div>
         </div>
         <div className=''></div>
       </motion.div>

@@ -4,7 +4,7 @@
 
 @layer components {
   .tag {
-    @apply border border-secondary text-sm px-2 py-0.5 rounded capitalize text-gray-600 focusRing;
+    @apply border border-secondary text-sm px-2 py-0.5 rounded capitalize text-gray-600 dark:text-gray-300 focusRing;
   }
 
   .tag.active {

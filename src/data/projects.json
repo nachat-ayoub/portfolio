@@ -48,7 +48,8 @@
     "liveDemo": "https://rewayati.vercel.app/",
     "startDate": "2022-09-03",
     "endDate": "2022-09-20",
-    "status": "Completed"
+    "status": "Not Working",
+    "issue": "Currently the novel website i was scrapping does not exist anymore so yeah until i have time then i will look for some website to replace with."
   },
   {
     "id": 4,
@@ -80,6 +81,18 @@
     "image": "https://th.bing.com/th/id/R.d2ee4e314afa093265091bd73479f158?rik=fMXBIB231vht0g&riu=http%3a%2f%2fwww.kreilkamp.com%2fwp-content%2fuploads%2f2016%2f11%2fthumbnail-placeholder-500x334.jpg&ehk=6mynfmrw2mIh5dlQYM8Tv05IgOruDa3JOaJMJnvs0Yg%3d&risl=&pid=ImgRaw&r=0",
     "tags": ["Laravel", "PHP", "MySQL", "Tailwind css"],
     "status": "Completed",
+    "githubRepo": "https://github.com/nachat-ayoub/absence-management",
+    "liveDemo": null,
+    "startDate": "2023-05-04",
+    "endDate": "2023-06-09"
+  },
+  {
+    "id": 6,
+    "title": "My First Startup",
+    "description": "Introducing My First Startup",
+    "image": "https://th.bing.com/th/id/R.d2ee4e314afa093265091bd73479f158?rik=fMXBIB231vht0g&riu=http%3a%2f%2fwww.kreilkamp.com%2fwp-content%2fuploads%2f2016%2f11%2fthumbnail-placeholder-500x334.jpg&ehk=6mynfmrw2mIh5dlQYM8Tv05IgOruDa3JOaJMJnvs0Yg%3d&risl=&pid=ImgRaw&r=0",
+    "tags": ["Laravel", "PHP", "MySQL", "Tailwind css"],
+    "status": "Started",
     "githubRepo": "https://github.com/nachat-ayoub/absence-management",
     "liveDemo": null,
     "startDate": "2023-05-04",

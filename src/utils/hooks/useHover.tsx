@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { isTouchDevice } from '..';
 
-console.log((isTouchDevice() ? 'Mobile ' : 'Pc ') + 'Device');
+// console.log((isTouchDevice() ? 'Mobile ' : 'Pc ') + 'Device');
 
 const useHover = <T extends HTMLElement>(): [React.RefObject<T>, boolean] => {
   const [isHovered, setHovered] = useState(false);
   const elementRef = useRef<T>(null);
 
-  useEffect(() => {
-    console.log('isHovered: ', isHovered);
-  }, [isHovered]);
+  // useEffect(() => {
+  //   console.log('isHovered: ', isHovered);
+  // }, [isHovered]);
 
   useEffect(() => {
     const handleMouseEnter = () => {
