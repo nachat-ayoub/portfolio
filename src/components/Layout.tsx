@@ -1,7 +1,6 @@
-import React from 'react';
-import ThemeSwitcher from './ThemeSwitcher';
-import GlowingBlobParticle from './GlowingParticles';
 import GlowingParticles from './GlowingParticles';
+import ThemeSwitcher from './ThemeSwitcher';
+import React from 'react';
 
 interface ILayoutProrps {
   children: JSX.Element | JSX.Element[];
