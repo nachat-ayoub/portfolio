@@ -1,15 +1,11 @@
-import { MdOutlineOpenInNew } from 'react-icons/md';
+import ProjectNavigation from '../components/ProjectNavigation';
 import ReadmePreview from '../components/ReadmePreview';
+import ProjectLinks from '../components/ProjectLinks';
 import { useLoaderData } from 'react-router-dom';
-import { IconContext } from 'react-icons';
-import { ImGithub } from 'react-icons/im';
-import Button from '../components/Button';
 import { IProject } from '../data/types';
 import Title from '../components/Title';
-import React from 'react';
 import Alert from '../components/Alert';
-import ProjectNavigation from '../components/ProjectNavigation';
-import ProjectLinks from '../components/ProjectLinks';
+import React from 'react';
 
 interface IProjectProps {
   project: IProject;
