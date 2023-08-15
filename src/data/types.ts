@@ -1,10 +1,13 @@
 // * Projects Types :
 
 export const ProjectStatusKeys = {
-  Started: 'bg-blue-600',
-  'In Development': 'bg-orange-600',
-  Completed: 'bg-green-600',
-  'Not Working': 'bg-red-600',
+  Started: { hoverWidth: 'group-hover:w-[75px]', bg: 'bg-blue-600' },
+  'In Development': {
+    hoverWidth: 'group-hover:w-[132px]',
+    bg: 'bg-orange-600',
+  },
+  Completed: { hoverWidth: 'group-hover:w-[100px]', bg: 'bg-green-600' },
+  'Not Working': { hoverWidth: 'group-hover:w-[114px]', bg: 'bg-red-600' },
 };
 export const ProjectStatus = Object.keys(ProjectStatusKeys);
 

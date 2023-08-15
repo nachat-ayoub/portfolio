@@ -14,23 +14,23 @@ const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
 
   return (
     <Link
-      className='w-full'
+      className='w-full sm:w-[25.5rem] md:w-[20rem] lg:w-[25rem]'
       title={project.title}
       to={`/projects/${project.id}`}
     >
       <motion.div
-        layout
+        className='w-full border-gray-200 dark:border-none rounded-b-sm border overflow-hidden rounded-t-md dark:shadow-[#232433] dark:shadow-sm mx-auto'
         animate={{ opacity: 1, scale: 1 }}
         initial={{ opacity: 0, scale: 0 }}
         exit={{ opacity: 0, scale: 0.8 }}
-        className='w-full sm:w-[25.5rem] md:w-[20rem] lg:w-[25rem] border-gray-200 border overflow-hidden rounded-t-md'
+        layout
       >
         <div className='relative w-full bg-[#ebebeb] py-1.5'>
           {/* //* buttons */}
           <div className='absolute top-1/2 -translate-y-1/2 px-2 flex gap-1.5'>
-            <div className='bg-red-500/90 w-3 h-3 rounded-full'></div>
-            <div className='bg-yellow-500/90 w-3 h-3 rounded-full'></div>
-            <div className='bg-green-500/90 w-3 h-3 rounded-full'></div>
+            <div className='bg-red-500/90 w-3 h-3 rounded-full' />
+            <div className='bg-yellow-500/90 w-3 h-3 rounded-full' />
+            <div className='bg-green-500/90 w-3 h-3 rounded-full' />
           </div>
 
           {/* //* title */}
@@ -85,23 +85,28 @@ const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
           />
 
           <div
-            className={`absolute top-1.5 right-1.5 text-white text-sm px-1.5 py-0.5 rounded shadow-md flex items-center gap-1.5 ${
-              ProjectStatusKeys[project.status]
-            }`}
+            className={`absolute top-1.5 right-1.5 whitespace-nowrap text-white text-sm px-1.5 py-0.5 rounded-[50%] shadow-md flex items-center gap-1.5 ${
+              ProjectStatusKeys[project.status].bg
+            } w-[26px] h-[26px] ${
+              ProjectStatusKeys[project.status].hoverWidth
+            } overflow-hidden group-hover:rounded transition-all duration-300 ease-in-out`}
           >
-            {project.status === 'Started' ? (
-              <FaRocket />
-            ) : project.status === 'In Development' ? (
-              <FaScrewdriverWrench />
-            ) : project.status === 'Completed' ? (
-              <FaCircleCheck />
-            ) : (
-              <FaCircleExclamation />
-            )}
-            {project.status}
+            <span className='py-1'>
+              {project.status === 'Started' ? (
+                <FaRocket />
+              ) : project.status === 'In Development' ? (
+                <FaScrewdriverWrench />
+              ) : project.status === 'Completed' ? (
+                <FaCircleCheck />
+              ) : (
+                <FaCircleExclamation />
+              )}
+            </span>
+            <span className='invisible group-hover:visible _delay-500'>
+              {project.status}
+            </span>
           </div>
         </div>
-        <div className=''></div>
       </motion.div>
     </Link>
   );

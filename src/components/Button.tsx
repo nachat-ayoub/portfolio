@@ -118,6 +118,7 @@ interface IButtonProps {
   href?: string;
   target?: React.HTMLAttributeAnchorTarget;
   fit?: boolean;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 const Button: React.FC<IButtonProps> = ({
@@ -126,15 +127,20 @@ const Button: React.FC<IButtonProps> = ({
   target,
   children,
   fit = true,
+  onClick,
 }) => {
   return (
     <div className={`${!fit && 'w-full'} md:w-fit z-10 relative`}>
       {href ? (
         <Link to={href} target={href === '#' ? '_self' : target}>
-          <ButtonContent color={color}>{children}</ButtonContent>
+          <ButtonContent onClick={onClick} color={color}>
+            {children}
+          </ButtonContent>
         </Link>
       ) : (
-        <ButtonContent color={color}>{children}</ButtonContent>
+        <ButtonContent onClick={onClick} color={color}>
+          {children}
+        </ButtonContent>
       )}
     </div>
   );
@@ -143,15 +149,18 @@ const Button: React.FC<IButtonProps> = ({
 export default Button;
 
 function ButtonContent({
+  onClick = () => {},
   children,
   color,
 }: {
   children: IButtonProps['children'];
   color: keyof typeof variants;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }) {
   return (
     <>
       <button
+        onClick={onClick}
         className={`w-full justify-center md:w-fit uppercase flex items-center text-xs md:text-sm text-white font-bold tracking-wider px-3 md:px-5 py-2 shadow rounded hover:translate-y-[1px] transition ${variants[color].bg}`}
       >
         {children}
@@ -161,7 +170,7 @@ function ButtonContent({
           '-z-10 absolute left-0 -bottom-1 w-full h-2 rounded-b ' +
           variants[color].border
         }
-      ></span>
+      />
     </>
   );
 }

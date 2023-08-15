@@ -6,6 +6,7 @@ import { IProject } from '../data/types';
 import Title from '../components/Title';
 import Alert from '../components/Alert';
 import React from 'react';
+import Layout from '../components/Layout';
 
 interface IProjectProps {
   project: IProject;
@@ -14,7 +15,7 @@ interface IProjectProps {
 const ProjectPage: React.FC = () => {
   const { project } = useLoaderData() as IProjectProps;
   return (
-    <div className='min-h-screen bg-gray-50 text-gray-900'>
+    <Layout>
       {/* //* Navigation */}
       <ProjectNavigation />
 
@@ -34,7 +35,7 @@ const ProjectPage: React.FC = () => {
 
           <div className='w-full'>
             <img
-              className='w-full border border-gray-100 object-cover rounded shadow'
+              className='w-full border border-gray-100 dark:border-none object-cover rounded shadow'
               src={project.image?.replace('/w_600', '/w_1200')}
               alt={project.title}
             />
@@ -48,7 +49,7 @@ const ProjectPage: React.FC = () => {
           <p className='text-center'>No project found with this id.</p>
         </section>
       )}
-    </div>
+    </Layout>
   );
 };
 

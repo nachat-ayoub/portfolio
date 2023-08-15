@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react';
+import { atom, useAtom } from 'jotai';
+import { useEffect } from 'react';
 
 type ThemeType = 'light' | 'dark';
 
-type IUseDarkmodeReturnState = [ThemeType, () => void];
+const themeAtom = atom<ThemeType>('light');
 
-function useDarkmode(defaultTheme: string = 'light'): IUseDarkmodeReturnState {
-  const [theme, setTheme] = useState<ThemeType>(
-    (localStorage.getItem('theme') as ThemeType) ?? defaultTheme
-  );
+function useDarkmode(defaultTheme: string = 'light'): [ThemeType, () => void] {
+  const [theme, setTheme] = useAtom(themeAtom);
 
   useEffect(() => {
     setTheme((localStorage.getItem('theme') as ThemeType) ?? defaultTheme);

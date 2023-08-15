@@ -3,18 +3,20 @@ import React, { useEffect, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { FaCircleExclamation } from 'react-icons/fa6';
 import emojiRemarkPlugin from 'remark-emoji';
+import useDarkmode from '../utils/hooks/useDarkMode';
 
 interface IReadmePreviewProps {
   repoUrl: string | null;
-  mode?: 'light' | 'dark';
+  mode?: 'light' | 'dark' | undefined;
 }
 
 const ReadmePreview: React.FC<IReadmePreviewProps> = ({
   repoUrl,
-  mode = 'light',
+  mode = undefined,
 }) => {
   const [readmeContent, setReadmeContent] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [theme] = useDarkmode();
 
   useEffect(() => {
     const extractRepoInfo = (
@@ -130,7 +132,7 @@ const ReadmePreview: React.FC<IReadmePreviewProps> = ({
           source={readmeContent}
           remarkPlugins={[emojiRemarkPlugin]}
           wrapperElement={{
-            'data-color-mode': mode,
+            'data-color-mode': mode || theme,
           }}
         />
       )}

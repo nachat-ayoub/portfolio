@@ -26,7 +26,7 @@ const ThemeSwitcher: React.FC = () => {
   }, [isAnimating]);
 
   return (
-    <div className='z-10 fixed bottom-4 right-4 '>
+    <div className='z-20 fixed bottom-4 right-4 '>
       <motion.div
         className={`relative w-12 h-12 cursor-pointer focus:ring-4 overflow-hidden ${
           theme !== 'dark'

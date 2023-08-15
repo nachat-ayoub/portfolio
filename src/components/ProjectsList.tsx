@@ -11,7 +11,7 @@ const ProjectsList: React.FC<IProjectsListProps> = ({ projects }) => {
   return projects && projects.length > 0 ? (
     <motion.div
       layout
-      className='w-full maw-w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center gap-5'
+      className='w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center gap-5'
     >
       <AnimatePresence>
         {projects.map((project) => (
