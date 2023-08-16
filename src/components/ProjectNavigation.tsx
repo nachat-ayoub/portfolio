@@ -12,7 +12,7 @@ import { contactInfo } from '../data';
 
 export default function ProjectNavigation() {
   return (
-    <section className='p-4 md:p-6 flex flex-col md:flex-row justify-between gap-4'>
+    <section className='p-4 md:p-6 flex flex-col sm:flex-row justify-between gap-4'>
       {/* //* Back Button */}
       <div className='w-fit'>
         <Button color='secondary' href='/'>
@@ -23,7 +23,7 @@ export default function ProjectNavigation() {
       </div>
 
       {/* //* Social links */}
-      <div className='w-full md:w-fit flex justify-between md:justify-start gap-2'>
+      <div className='w-full flex-wrap sm:w-fit flex justify-start gap-2'>
         <Button color='slate' target='_blank' href={contactInfo.github}>
           <IconContext.Provider value={{ size: '25' }}>
             <TbBrandGithubFilled />

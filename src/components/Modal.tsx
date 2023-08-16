@@ -26,13 +26,17 @@ const Modal: FC<IModalProps> = ({
     isOpen ? 'opacity-100' : 'opacity-0'
   }`;
 
-  const contentClass = `bg-white py-2 dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-all max-w-lg w-full ${
+  const contentClass = `bg-gray-100 py-2 dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-all max-w-lg w-full ${
     isOpen ? 'scale-100' : 'scale-95'
   }`;
 
   const [buttonText, setButtonText] = useState(closeButtonText);
 
   useEffect(() => {
+    document.body.classList.add(
+      isOpen ? 'overflow-y-hidden' : 'overflow-y-scroll'
+    );
+
     if (isOpen) {
       let btnText =
         closeButtonText !== '' ? closeButtonText : randomCantWaitButtonText();

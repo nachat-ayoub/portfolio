@@ -24,7 +24,21 @@
   }
 }
 
-@keyframes slideIn {
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-2 h-2 bg-gray-300 dark:bg-gray-700;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply rounded-full;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-500 dark:bg-gray-300 hover:bg-gray-700 hover:dark:bg-gray-400 transition;
+  }
+}
+
+/* @keyframes slideIn {
   0% {
     transform-origin: bottom;
     transform: translateY(-10px) scaleY(1);
@@ -45,7 +59,7 @@
 .tagSlideInAnimation {
   animation-name: slideIn;
   animation-duration: 0.2s;
-  /* animation-delay: specify delay here ; */
+  /  animation-delay: specify delay here ;  /
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-}
+} */
