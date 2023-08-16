@@ -16,6 +16,7 @@ const ProjectCreationPage = () => {
     image: '',
     tags: [],
     status: 'Started',
+    issue: '',
     newTag: '',
   });
 
@@ -180,6 +181,20 @@ const ProjectCreationPage = () => {
               className='w-full border-gray-300 rounded-md p-2'
             />
           </div>
+        </div>
+
+        <div className='mb-4'>
+          <label htmlFor='issue' className='block font-medium mb-2'>
+            Issue:
+          </label>
+          <textarea
+            className='w-full border-gray-300 rounded-md p-2'
+            onChange={handleInputChange}
+            value={formData.issue ?? ''}
+            name='issue'
+            id='issue'
+            required
+          ></textarea>
         </div>
 
         <div className='flex gap-x-4 w-full'>

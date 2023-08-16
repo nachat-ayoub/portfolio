@@ -17,7 +17,7 @@ const GlowingParticles: React.FC<GlowingParticlesProps> = ({ colors }) => {
     const particleCount = Math.floor(pageHeight / spaceBetween);
     const sideMargin = 2;
     const particleClasses =
-      'absolute animate-pulse blur-[150px] rounded-full z-0';
+      'absolute animate-pulse animate-ping blur-[150px] rounded-full z-0';
 
     for (let i = 0; i < particleCount; i++) {
       const topPosition =

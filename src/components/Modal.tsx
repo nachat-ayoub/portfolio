@@ -1,16 +1,23 @@
+import { FC, useState, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
-import { FC } from 'react';
-import { randomCantWaitButtonText } from '../utils';
 import Button from './Button';
+import { randomCantWaitButtonText } from '../utils';
 
 interface IModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
   description: string;
+  closeButtonText?: string;
 }
 
-const Modal: FC<IModalProps> = ({ isOpen, onClose, title, description }) => {
+const Modal: FC<IModalProps> = ({
+  isOpen,
+  onClose,
+  title,
+  description,
+  closeButtonText = '',
+}) => {
   const overlayClass = `z-50 fixed inset-0 bg-gray-500 bg-opacity-75 backdrop-blur-[2px] transition-opacity ${
     isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
   }`;
@@ -22,6 +29,22 @@ const Modal: FC<IModalProps> = ({ isOpen, onClose, title, description }) => {
   const contentClass = `bg-white py-2 dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-all max-w-lg w-full ${
     isOpen ? 'scale-100' : 'scale-95'
   }`;
+
+  const [buttonText, setButtonText] = useState(closeButtonText);
+
+  useEffect(() => {
+    if (isOpen) {
+      let btnText =
+        closeButtonText !== '' ? closeButtonText : randomCantWaitButtonText();
+
+      while (btnText === buttonText) {
+        console.log('generate new btn text');
+        btnText = randomCantWaitButtonText();
+      }
+
+      setButtonText(btnText);
+    }
+  }, [isOpen]);
 
   return (
     <div className={overlayClass}>
@@ -47,7 +70,7 @@ const Modal: FC<IModalProps> = ({ isOpen, onClose, title, description }) => {
 
             <div className='mt-6'>
               <Button color='success' onClick={onClose} size='xs'>
-                {randomCantWaitButtonText()}
+                {buttonText}
               </Button>
             </div>
           </div>

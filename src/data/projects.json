@@ -88,14 +88,20 @@
   },
   {
     "id": 6,
-    "title": "My First Startup",
-    "description": "Introducing My First Startup",
-    "image": "https://i.imgur.com/5NhXSJt.jpg",
-    "tags": ["Laravel", "PHP", "MySQL", "Tailwind css"],
+    "title": "Eco-Friendly E-commerce Platform",
+    "description": "Creating a sustainable online marketplace to promote eco-friendly products and reduce carbon footprint.",
+    "image": "/assets/ecommerce.png",
+    "tags": [
+      "Web Development",
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "Tailwind css",
+      "web",
+      "E-commerce"
+    ],
     "status": "Started",
-    "githubRepo": null,
-    "liveDemo": null,
-    "startDate": "2023-05-04",
-    "endDate": "2023-06-09"
+    "issue": "This project still in the planning stage so no github repo or live demo exists.",
+    "startDate": "2023-08-16"
   }
 ]

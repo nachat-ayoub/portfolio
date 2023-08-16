@@ -8,6 +8,8 @@ import Alert from '../components/Alert';
 import React from 'react';
 import Layout from '../components/Layout';
 import Image from '../components/Image';
+import moment from 'moment';
+import { formatDuration } from '../utils';
 
 interface IProjectProps {
   project: IProject;
@@ -24,6 +26,24 @@ const ProjectPage: React.FC = () => {
       {project ? (
         <section className='w-full p-4 md:px-28 lg:px-40 flex flex-col gap-y-6'>
           <Title content={project?.title} />
+          <p className='text-base dark:text-gray-400'>
+            Project started{' '}
+            <span className='font-semibold dark:text-gray-300'>
+              {moment(project.startDate).fromNow()}{' '}
+            </span>
+            -{' '}
+            {project?.endDate ? (
+              <span className='text-base dark:text-gray-400'>
+                finished in{' '}
+                <span className='font-semibold dark:text-gray-300'>
+                  {formatDuration(project.startDate, project.endDate)}
+                </span>
+              </span>
+            ) : (
+              'Work in Progress'
+            )}
+            .
+          </p>
           <p>{project?.description}</p>
 
           {/* //* Issue Alert if there is an issue */}
