@@ -119,6 +119,7 @@ interface IButtonProps {
   target?: React.HTMLAttributeAnchorTarget;
   fit?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  size?: 'xs' | 'sm';
 }
 
 const Button: React.FC<IButtonProps> = ({
@@ -128,17 +129,18 @@ const Button: React.FC<IButtonProps> = ({
   children,
   fit = true,
   onClick,
+  size = 'sm',
 }) => {
   return (
     <div className={`${!fit && 'w-full'} md:w-fit z-10 relative`}>
       {href ? (
         <Link to={href} target={href === '#' ? '_self' : target}>
-          <ButtonContent onClick={onClick} color={color}>
+          <ButtonContent size={size} onClick={onClick} color={color}>
             {children}
           </ButtonContent>
         </Link>
       ) : (
-        <ButtonContent onClick={onClick} color={color}>
+        <ButtonContent size={size} onClick={onClick} color={color}>
           {children}
         </ButtonContent>
       )}
@@ -152,16 +154,22 @@ function ButtonContent({
   onClick = () => {},
   children,
   color,
+  size,
 }: {
   children: IButtonProps['children'];
   color: keyof typeof variants;
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  size: 'xs' | 'sm';
 }) {
   return (
     <>
       <button
         onClick={onClick}
-        className={`w-full justify-center md:w-fit uppercase flex items-center text-xs md:text-sm text-white font-bold tracking-wider px-3 md:px-5 py-2 shadow rounded hover:translate-y-[1px] transition ${variants[color].bg}`}
+        className={`w-full justify-center md:w-fit uppercase flex items-center text-xs ${
+          size === 'sm' ? 'md:text-sm' : 'md:text-xs'
+        } text-white font-bold tracking-wider px-3 md:px-5 py-2 shadow rounded hover:translate-y-[1px] transition ${
+          variants[color].bg
+        }`}
       >
         {children}
       </button>

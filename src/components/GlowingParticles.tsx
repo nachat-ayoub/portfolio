@@ -1,48 +1,68 @@
-import React from 'react';
-import { randInt } from '../utils';
+import React, { useEffect, useState } from 'react';
+import { randFloat, randInt } from '../utils';
 
 interface GlowingParticlesProps {
   colors: string[]; // Array of tailwind CSS colors
 }
 
 const GlowingParticles: React.FC<GlowingParticlesProps> = ({ colors }) => {
-  const windowHeight = window.innerHeight;
-  const particleCount = Math.floor(windowHeight / 120); // Adjust the division as needed
-  console.log({ particleCount, windowHeight });
-  const particles = [];
-  const minSpace = 100;
-  const maxSpace = 200;
-  let currentPos = 0;
+  const [particles, setParticles] = useState<JSX.Element[]>([]);
 
-  for (let i = 0; i < particleCount; i++) {
-    const topPosition =
-      currentPos === 0
-        ? 60
-        : randInt(currentPos + minSpace, currentPos + maxSpace);
-    const particleSize = randInt(100, 200); // Size range: 200px to 500px
-    const leftPosition =
-      i % 2 === 0
-        ? -(particleSize / 4 + randInt(2, 3) * 8)
-        : window.innerWidth - particleSize / 4 + randInt(2, 3) * 8;
-    const randomColor = colors[i % colors.length]; // Reuse colors array if needed
+  function generatePrticles() {
+    let currentPos = 0;
+    const minSpace = window.innerHeight / 2;
+    const maxSpace = window.innerHeight / 1.2;
+    const pageHeight = document.body.clientHeight;
+    const spaceBetween = maxSpace - (maxSpace - minSpace) / 2;
+    const particleCount = Math.floor(pageHeight / spaceBetween);
+    const sideMargin = 2;
+    const particleClasses =
+      'absolute animate-pulse blur-[150px] rounded-full z-0';
 
-    currentPos += topPosition + particleSize;
+    for (let i = 0; i < particleCount; i++) {
+      const topPosition =
+        currentPos === 0
+          ? 60
+          : randInt(currentPos + minSpace, currentPos + maxSpace);
+      const particleSize = randInt(100, 200); // Size range: 200px to 500px
+      const sidePosition =
+        // i % 2 === 0 ?
+        -(particleSize / 3 + randInt(2, 3) * sideMargin);
+      // : window.innerWidth - particleSize / (Math.random() * sideMargin + 1);
+      const randomColor = colors[i % colors.length]; // Reuse colors array if needed
 
-    const particleStyle = {
-      top: `${topPosition}px`,
-      left: `${leftPosition}px`,
-      width: `${particleSize}px`,
-      height: `${particleSize}px`,
-    };
+      currentPos = topPosition + particleSize;
 
-    particles.push(
-      <div
-        key={i}
-        className={'absolute blur-[150px] rounded-full z-0 ' + randomColor}
-        style={particleStyle}
-      />
-    );
+      const particleWidth = particleSize * randFloat(1, 1.3);
+
+      const particleStyle = {
+        width: `${particleWidth}px`,
+        height: `${particleSize}px`,
+        top: `${topPosition}px`,
+        [i % 2 ? 'left' : 'right']: `${sidePosition - particleWidth / 5}px`,
+        animation: `spin ${randFloat(1, 10)}s linear infinite`,
+      };
+
+      setParticles((otherParticles) => [
+        ...otherParticles,
+        <div
+          className={particleClasses + ' ' + randomColor}
+          style={particleStyle}
+          key={i}
+        />,
+      ]);
+    }
   }
+
+  let alreadyGenerated = false;
+  useEffect(() => {
+    if (!alreadyGenerated) {
+      alreadyGenerated = true;
+      setTimeout(() => {
+        generatePrticles();
+      }, 3000);
+    }
+  }, []);
 
   return <>{particles}</>;
 };

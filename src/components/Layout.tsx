@@ -22,19 +22,17 @@ const Layout: React.FC<ILayoutProrps> = ({
             className
         }
       >
-        {/* <div className='absolute -top-[250px] -right-1/4 bg-white/40 blur-[150px] rounded-full w-1/3 max-w-md h-1/3 max-h-[400px] z-0' />
-
-        <div className='absolute top-[450px] -left-1/4 bg-gradient-to-tr from-blue-600/50 to-sky-500/2 blur-[150px] rounded-full w-1/3 max-w-md h-1/3 max-h-[400px] z-0' />
-
-        <div className='absolute top-[1400px] -left-1/4 bg-gradient-to-tr from-pink-600/50 via-pink-600/50 to-purple-500/50 blur-[150px] rounded-full w-1/3 max-w-md h-1/3 max-h-[400px] z-0' /> */}
-
         <GlowingParticles
           colors={[
-            'bg-blue-500',
-            'bg-amber-500',
-            'bg-sky-500',
-            'bg-pink-500',
-            'bg-red-500',
+            'bg-emerald-500/50',
+            'bg-teal-500/50',
+            'bg-cyan-500/50',
+            'bg-sky-500/50',
+            'bg-blue-500/50',
+            'bg-indigo-500/50',
+            'bg-violet-500/50',
+            'bg-purple-500/50',
+            'bg-fuchsia-500/50',
           ]}
         />
 

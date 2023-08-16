@@ -7,6 +7,7 @@ import Title from '../components/Title';
 import Alert from '../components/Alert';
 import React from 'react';
 import Layout from '../components/Layout';
+import Image from '../components/Image';
 
 interface IProjectProps {
   project: IProject;
@@ -34,7 +35,7 @@ const ProjectPage: React.FC = () => {
           <ProjectLinks project={project} />
 
           <div className='w-full'>
-            <img
+            <Image
               className='w-full border border-gray-100 dark:border-none object-cover rounded shadow'
               src={project.image?.replace('/w_600', '/w_1200')}
               alt={project.title}

@@ -1,5 +1,7 @@
 import { FaTimes } from 'react-icons/fa';
 import { FC } from 'react';
+import { randomCantWaitButtonText } from '../utils';
+import Button from './Button';
 
 interface IModalProps {
   isOpen: boolean;
@@ -17,7 +19,7 @@ const Modal: FC<IModalProps> = ({ isOpen, onClose, title, description }) => {
     isOpen ? 'opacity-100' : 'opacity-0'
   }`;
 
-  const contentClass = `bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-all max-w-lg w-full ${
+  const contentClass = `bg-white py-2 dark:bg-gray-800 rounded-lg overflow-hidden shadow-xl transform transition-all max-w-lg w-full ${
     isOpen ? 'scale-100' : 'scale-95'
   }`;
 
@@ -42,6 +44,12 @@ const Modal: FC<IModalProps> = ({ isOpen, onClose, title, description }) => {
             <p className='mt-4 text-sm md:text-[15px] text-gray-600 dark:text-gray-400'>
               {description}
             </p>
+
+            <div className='mt-6'>
+              <Button color='success' onClick={onClose} size='xs'>
+                {randomCantWaitButtonText()}
+              </Button>
+            </div>
           </div>
         </div>
       </div>

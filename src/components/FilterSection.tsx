@@ -70,6 +70,56 @@ export default function FilterSection({
             ))}
         </div>
       </section>
+
+      {/* //* Status */}
+      <section className=''>
+        <h4 className='capitalize mb-2'>status:</h4>
+        <div className='flex flex-wrap gap-2'>
+          <button
+            className={`tag ${!searchFilters?.status && 'active'}`}
+            onClick={() => {
+              const active =
+                !searchFilters?.status || searchFilters?.status === undefined;
+              if (!active) {
+                setSearchFilters((val) => ({
+                  ...val,
+                  status: undefined,
+                }));
+              }
+            }}
+          >
+            All
+          </button>
+          {data?.status &&
+            data?.status.map((_status) => (
+              <button
+                key={_status}
+                className={`tag ${
+                  searchFilters?.status &&
+                  searchFilters?.status === _status &&
+                  'active'
+                }`}
+                onClick={() => {
+                  const active =
+                    searchFilters?.status && searchFilters?.status === _status;
+                  if (active) {
+                    setSearchFilters((val) => ({
+                      ...val,
+                      status: undefined,
+                    }));
+                  } else {
+                    setSearchFilters((val) => ({
+                      ...val,
+                      status: _status as IProjectsFilter['status'],
+                    }));
+                  }
+                }}
+              >
+                {_status}
+              </button>
+            ))}
+        </div>
+      </section>
     </>
   );
 }

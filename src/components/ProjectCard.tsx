@@ -8,6 +8,7 @@ import {
   FaRocket,
   FaScrewdriverWrench,
 } from 'react-icons/fa6';
+import Image from './Image';
 
 const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
   const [hoverRef, isHovered] = useHover();
@@ -78,7 +79,7 @@ const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
             </ul>
           </div>
 
-          <img
+          <Image
             className='w-full h-full object-cover rounded-b-sm shadow'
             src={project.image}
             alt={project.title}
