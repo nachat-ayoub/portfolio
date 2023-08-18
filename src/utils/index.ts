@@ -47,7 +47,14 @@ function randomCantWaitButtonText() {
   return buttonTexts[randInt(0, buttonTexts.length - 1)];
 }
 
+const isMobileDevice = () => {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  console.log('Device:', isMobile ? 'Mobile' : 'Pc/Laptop');
+  return isMobile;
+};
+
 export {
+  isMobileDevice,
   isTouchDevice,
   randInt,
   randFloat,

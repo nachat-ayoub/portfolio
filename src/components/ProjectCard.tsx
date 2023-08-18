@@ -9,6 +9,7 @@ import {
   FaScrewdriverWrench,
 } from 'react-icons/fa6';
 import Image from './Image';
+import { isMobileDevice } from '../utils';
 
 const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
   const [hoverRef, isHovered] = useHover();
@@ -45,37 +46,34 @@ const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
         >
           <div className='pointer-events-none -translate-y-full group-hover:translate-y-0 transition absolute h-full w-full top-0 left-0 bg-black/60 shadow-[0_0_150px_rgba(0,0,0,.75)_inset] flex justify-center items-center'>
             <ul className='flex justify-center flex-wrap gap-2 p-4'>
-              <AnimatePresence>
-                {isHovered &&
-                  project.tags.map((tag, index) => (
-                    <motion.li
-                      key={tag}
-                      initial={{
-                        y: 10,
-                        scaleY: 1,
-                        opacity: 0,
-                        transformOrigin: 'bottom',
-                      }}
-                      animate={{
-                        transformOrigin: 'bottom',
-                        y: [-10, 10, 0],
-                        opacity: 1,
-                        scaleY: [1, 0.8, 1],
-                        transition: {
-                          duration: 0.2,
-                          delay:
-                            index * 0.03 +
-                            (1 - project?.tags.length / 10) * 0.2,
-                          scaleY: { duration: 0.3 },
-                          opacity: { duration: 0.1 },
-                        },
-                      }}
-                      className='tag text-[13px] active rounded-sm font-bold'
-                    >
-                      {tag}
-                    </motion.li>
-                  ))}
-              </AnimatePresence>
+              {isHovered &&
+                project.tags.map((tag, index) => (
+                  <motion.li
+                    key={tag}
+                    initial={{
+                      y: 10,
+                      scaleY: 1,
+                      opacity: 0,
+                      transformOrigin: 'bottom',
+                    }}
+                    animate={{
+                      transformOrigin: 'bottom',
+                      y: [-10, 10, 0],
+                      opacity: 1,
+                      scaleY: [1, 0.8, 1],
+                      transition: {
+                        duration: 0.2,
+                        delay:
+                          index * 0.02 + (1 - project?.tags.length / 10) * 0.2,
+                        scaleY: { duration: 0.3 },
+                        opacity: { duration: 0.1 },
+                      },
+                    }}
+                    className={'tag text-[13px] active rounded-sm font-bold'}
+                  >
+                    {tag}
+                  </motion.li>
+                ))}
             </ul>
           </div>
 

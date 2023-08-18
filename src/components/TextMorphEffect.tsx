@@ -123,28 +123,19 @@ const TextMorphEffect: React.FC<TextMorphEffectProps> = ({
     <>
       <div
         ref={containerRef}
-        id='container'
-        className='font-bold'
+        className='font-bold w-full'
         style={{ filter: 'url(#threshold) blur(0.6px)' }}
       >
         <span
-          className='absolute w-full inline-block font-bold select-none  text-center text-8xl'
+          // left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+          className='absolute translate-x-0 translate-y-0 left-0 top-0 w-full inline-block font-bold select-none text-7xl md:text-8xl text-center'
           id='text1'
-        ></span>
+        />
         <span
-          className='absolute w-full inline-block font-bold select-none text-8xl text-center transition-colors duration-300'
+          // left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+          className='absolute translate-x-0 translate-y-0 left-0 top-0 w-full inline-block font-bold select-none text-7xl md:text-8xl text-center transition-colors duration-300'
           id='text2'
-        ></span>
-        {/* {
-  position: absolute;
-  width: 100%;
-  display: inline-block;
-  font-size: 80pt;
-  font-weight: bold;
-  text-align: center;
-  user-select: none;
-
-} */}
+        />
       </div>
 
       <svg id='filters'>

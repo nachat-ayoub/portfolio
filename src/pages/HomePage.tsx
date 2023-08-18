@@ -1,14 +1,13 @@
 import { IProjectData, getProjects } from '../data/services';
 import FilterSection from '../components/FilterSection';
 import ProjectsList from '../components/ProjectsList';
-// import WindowSize from '../components/WindowSize';
+import HeroSection from '../components/HeroSection';
 import SearchBar from '../components/SearchBar';
 import { IProjectsFilter } from '../data/types';
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 import React from 'react';
-import HeroSection from '../components/HeroSection';
 
 interface IHomeProps {}
 
