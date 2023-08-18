@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 import React from 'react';
+import HeroSection from '../components/HeroSection';
 
 interface IHomeProps {}
 
@@ -26,6 +27,8 @@ const Home: React.FC<IHomeProps> = () => {
   return (
     <Layout>
       <div className='w-full py-4 px-3 md:px-10 flex flex-col gap-y-6'>
+        <HeroSection />
+
         <Title content='Projects' />
 
         <SearchBar
