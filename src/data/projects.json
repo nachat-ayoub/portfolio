@@ -3,7 +3,14 @@
     "id": 1,
     "title": "Netflix Clone",
     "description": "A Netflix clone built with React.js, Sass, and TMDB API.",
-    "tags": ["web", "frontend", "React.js", "Sass", "REST API", "TMDB API"],
+    "tags": [
+      "Web Development",
+      "Frontend",
+      "React.js",
+      "Sass",
+      "REST API",
+      "TMDB API"
+    ],
     "image": "https://res.cloudinary.com/nachatayoub/image/upload/w_600/v1660487693/image_ff5edde1cd.png",
     "githubRepo": "https://github.com/nachat-ayoub/Netflix-Clone",
     "liveDemo": "https://netflixclone-ayoub.web.app/",
@@ -13,18 +20,40 @@
   },
   {
     "id": 2,
-    "title": "Todo App",
-    "description": "This project was made just for practicing purposes and that's mean it's not a professional design layout at all have a look at the source code down below. and leave a star if you like.",
+    "title": "Shoorty a link shortner website",
+    "description": "Introducing Shoorty: The Elegance of Brevity. Beyond link shortening, it offers a unique twist. Seamlessly embedded within its mechanism is the power to promote your YouTube channels. Security and ease merge through JSON Web Tokens (JWT). EJS lends its magic to the dynamic frontend, promising a smooth ride. Unshackle your URLs from excess - Shoorty is here.",
     "tags": [
-      "web",
-      "frontend",
+      "Web Development",
+      "Full Stack",
+      "Bootstrap",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "EJS"
+    ],
+    "image": "https://res.cloudinary.com/nachatayoub/image/upload/w_600/v1661107017/image_0265c96b34.png",
+    "githubRepo": "https://github.com/nachat-ayoub/shoorty-auth-version",
+    "liveDemo": null,
+    "startDate": "2022-07-21",
+    "endDate": "2022-08-10",
+    "status": "Not Working",
+    "issue": "This web project, unfortunately, is currently experiencing downtime due to the discontinuation of the free hosting service provided by Heroku. As a result, the project is temporarily inaccessible until suitable hosting alternatives are explored and implemented."
+  },
+  {
+    "id": 3,
+    "title": "Todo App",
+    "description": "This project was made just for practicing purposes and that's mean it does not have a professional design, have a look at the source code. and leave a star if you like it.",
+    "tags": [
+      "Web Development",
+      "Frontend",
       "React.js",
       "Sass",
       "Redux",
       "Redux Toolkit",
       "LocalStorage"
     ],
-    "image": "https://res.cloudinary.com/nachatayoub/image/upload/w_600/v1661105485/Screenshot_2022_08_21_at_19_10_15_React_App_0629d616e5.png",
+    "image": "https://i.imgur.com/8okrTXi.png",
     "githubRepo": "https://github.com/nachat-ayoub/react-todo-app",
     "liveDemo": "https://ayoub-todo-app.netlify.app",
     "startDate": "2022-08-18",
@@ -32,13 +61,12 @@
     "status": "Completed"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Rewayati - Light Novel Website",
     "description": "Rewayati is a light novel website created with two versions (Next.js & Sveltekit).",
     "tags": [
-      "web",
-      "frontend",
-      "backend",
+      "Web Development",
+      "Full Stack",
       "Next.js",
       "Sveltekit",
       "Tailwind css"
@@ -52,14 +80,13 @@
     "issue": "Currently the novel website i was scrapping does not exist anymore so yeah until i have time then i will look for some website to replace it with."
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "MitAnime - Anime Website",
     "description": "MitAnime is an anime website for arabic translated anime, created using MERN Stack.",
     "tags": [
-      "web",
-      "frontend",
-      "backend",
-      "Mongodb",
+      "Web Development",
+      "Full Stack",
+      "MongoDB",
       "Express.js",
       "React.js",
       "Node.js",
@@ -75,7 +102,7 @@
     "status": "Completed"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "ISTA Presence",
     "description": "Introducing ISTA Presence - A Project by the Talented Team of NACHAT Ayoub, ZAARAOUI Mustapha, ABODO Hatim, and OUAKILI Badreddine.\nWe are proud to present ISTA Presence, a website meticulously crafted using Laravel. Our goal was to create a convenient solution for teachers and the principal at ISTA(Specialized Institute of Applied Technologies) to efficiently track and record trainees' attendance. With ISTA Presence, teachers can effortlessly note the presence of trainees, while the principal can easily access and export weekly attendance data. Our project aims to streamline attendance management, enhancing efficiency and promoting a seamless learning environment at ISTA.",
     "image": "https://i.imgur.com/1auxora.jpg",
@@ -87,7 +114,7 @@
     "endDate": "2023-06-09"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Eco-Friendly E-commerce Platform",
     "description": "Creating a sustainable online marketplace to promote eco-friendly products and reduce carbon footprint.",
     "image": "/assets/ecommerce.png",
@@ -97,7 +124,7 @@
       "PHP",
       "MySQL",
       "Tailwind css",
-      "web",
+
       "E-commerce"
     ],
     "status": "Started",

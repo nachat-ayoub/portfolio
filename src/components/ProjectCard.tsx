@@ -80,6 +80,7 @@ const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
             className='w-full h-full object-cover rounded-b-sm shadow'
             src={project.image}
             alt={project.title}
+            sm
           />
 
           <div
