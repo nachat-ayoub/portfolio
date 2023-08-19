@@ -1,15 +1,14 @@
-import { useHover } from '../utils/hooks';
 import { IProject, ProjectStatusKeys } from '../data/types';
+import { useHover } from '../utils/hooks';
 import { Link } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
+  FaRocket,
   FaCircleCheck,
   FaCircleExclamation,
-  FaRocket,
   FaScrewdriverWrench,
 } from 'react-icons/fa6';
 import Image from './Image';
-import { isMobileDevice } from '../utils';
 
 const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
   const [hoverRef, isHovered] = useHover();
