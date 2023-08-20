@@ -114,21 +114,22 @@
     "endDate": "2023-06-09"
   },
   {
-    "id": 7,
-    "title": "Eco-Friendly E-commerce Platform",
-    "description": "Creating a sustainable online marketplace to promote eco-friendly products and reduce carbon footprint.",
-    "image": "/assets/ecommerce.png",
+    "id": 8,
+    "title": "Novel Universe",
+    "description": "Novel Universe is an innovative online platform where aspiring authors can share their original novels, fostering a community of writers and readers. The platform features a unique submission process, interactive reader-author interactions, and a range of features that enhance the writing and reading experience.",
+    "image": "https://i.imgur.com/UaSyFa0.png",
     "tags": [
       "Web Development",
-      "Laravel",
-      "PHP",
-      "MySQL",
-      "Tailwind css",
-
-      "E-commerce"
+      "Full Stack",
+      "Next.js",
+      "React.js",
+      "NextAuth.js",
+      "PostgreSQL",
+      "Prisma",
+      "Tailwind css"
     ],
     "status": "Started",
-    "issue": "This project still in the planning stage so no github repo or live demo exists.",
-    "startDate": "2023-08-16"
+    "startDate": "2023-08-19",
+    "endDate": null
   }
 ]

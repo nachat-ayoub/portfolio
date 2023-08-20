@@ -24,15 +24,15 @@ const Layout: React.FC<ILayoutProrps> = ({
       >
         <GlowingParticles
           colors={[
-            'bg-emerald-500/40',
-            'bg-teal-500/40',
-            'bg-cyan-500/40',
-            'bg-sky-500/40',
-            'bg-blue-500/40',
-            'bg-indigo-500/40',
-            'bg-violet-500/40',
-            'bg-purple-500/40',
-            'bg-fuchsia-500/40',
+            'bg-emerald-500/70',
+            'bg-teal-500/70',
+            'bg-cyan-500/70',
+            'bg-sky-500/70',
+            'bg-blue-500/70',
+            'bg-indigo-500/70',
+            'bg-violet-500/70',
+            'bg-purple-500/70',
+            'bg-fuchsia-500/70',
           ]}
         />
 

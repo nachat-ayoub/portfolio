@@ -7,6 +7,7 @@ interface GlowingParticlesProps {
 
 const GlowingParticles: React.FC<GlowingParticlesProps> = ({ colors }) => {
   const [particles, setParticles] = useState<JSX.Element[]>([]);
+  const [showParticles, setShowParticles] = useState(false);
 
   function generatePrticles() {
     let currentPos = 0;
@@ -25,10 +26,7 @@ const GlowingParticles: React.FC<GlowingParticlesProps> = ({ colors }) => {
           ? 60
           : randInt(currentPos + minSpace, currentPos + maxSpace);
       const particleSize = randInt(100, 200); // Size range: 200px to 500px
-      const sidePosition =
-        // i % 2 === 0 ?
-        -(particleSize / 3 + randInt(2, 3) * sideMargin);
-      // : window.innerWidth - particleSize / (Math.random() * sideMargin + 1);
+      const sidePosition = -(particleSize / 3 + randInt(2, 3) * sideMargin);
       const randomColor = colors[i % colors.length]; // Reuse colors array if needed
 
       currentPos = topPosition + particleSize;
@@ -58,13 +56,20 @@ const GlowingParticles: React.FC<GlowingParticlesProps> = ({ colors }) => {
   useEffect(() => {
     if (!alreadyGenerated) {
       alreadyGenerated = true;
+      setShowParticles(true);
       setTimeout(() => {
         generatePrticles();
       }, 3000);
     }
   }, []);
 
-  return <>{particles}</>;
+  return (
+    <div
+      className={'opacity-0 transition ' + (showParticles ? 'opacity-100' : '')}
+    >
+      {particles}
+    </div>
+  );
 };
 
 export default GlowingParticles;
