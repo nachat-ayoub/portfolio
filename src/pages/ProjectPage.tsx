@@ -47,7 +47,7 @@ const ProjectPage: React.FC = () => {
           <p>{project?.description}</p>
 
           {/* //* Issue Alert if there is an issue */}
-          {project?.issue && (
+          {project?.issue && project?.status === 'Not Working' && (
             <Alert message={project?.issue} type='warning' mode='light' />
           )}
 
