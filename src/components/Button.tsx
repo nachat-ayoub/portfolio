@@ -117,6 +117,7 @@ interface IButtonProps {
   color?: keyof typeof variants;
   href?: string;
   target?: React.HTMLAttributeAnchorTarget;
+  download?: boolean;
   fit?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   size?: 'xs' | 'sm';
@@ -127,6 +128,7 @@ const Button: React.FC<IButtonProps> = ({
   href,
   target,
   children,
+  download = false,
   fit = true,
   onClick,
   size = 'sm',
@@ -134,11 +136,19 @@ const Button: React.FC<IButtonProps> = ({
   return (
     <div className={`${!fit && 'w-full'} md:w-fit z-10 relative`}>
       {href ? (
-        <Link to={href} target={href === '#' ? '_self' : target}>
-          <ButtonContent size={size} onClick={onClick} color={color}>
-            {children}
-          </ButtonContent>
-        </Link>
+        !download ? (
+          <Link to={href} target={href === '#' ? '_self' : target}>
+            <ButtonContent size={size} onClick={onClick} color={color}>
+              {children}
+            </ButtonContent>
+          </Link>
+        ) : (
+          <a target={href === '#' ? '_self' : target} href={href}>
+            <ButtonContent size={size} onClick={onClick} color={color}>
+              {children}
+            </ButtonContent>
+          </a>
+        )
       ) : (
         <ButtonContent size={size} onClick={onClick} color={color}>
           {children}

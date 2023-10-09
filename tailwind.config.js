@@ -13,6 +13,9 @@ export default {
       animation: {
         fadeDown: 'fadeDown 0.2s ease-in-out forwards',
       },
+      animation: {
+        dot_to_bar: 'dot_to_bar 0.2s ease-in-out forwards',
+      },
       keyframes: {
         fadeDown: {
           '0%': {
@@ -26,6 +29,14 @@ export default {
           '100%': {
             transform: 'translateY(0px) scaleY(1)',
             opacity: 1,
+          },
+        },
+        dot_to_bar: {
+          '0%': {
+            width: '0.5rem',
+          },
+          '100%': {
+            width: '3rem',
           },
         },
       },

@@ -1,4 +1,5 @@
 import GlowingParticles from './GlowingParticles';
+import Navbar from './Navbar';
 import ThemeSwitcher from './ThemeSwitcher';
 import React from 'react';
 
@@ -22,6 +23,7 @@ const Layout: React.FC<ILayoutProrps> = ({
             className
         }
       >
+        <Navbar />
         <GlowingParticles
           colors={[
             'bg-emerald-500/70',
@@ -36,7 +38,7 @@ const Layout: React.FC<ILayoutProrps> = ({
           ]}
         />
 
-        <div className='relative z-10'>{children}</div>
+        <div className='relative z-10 h-full'>{children}</div>
       </main>
 
       <ThemeSwitcher />

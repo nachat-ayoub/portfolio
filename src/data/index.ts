@@ -5,7 +5,7 @@ const contactInfo = {
   github: 'https://github.com/nachat-ayoub',
   twitter: 'https://twitter.com/nachatayoub1',
   linkedin: 'https://www.linkedin.com/in/nachat-ayoub',
-  email: 'nachat.ayoub.freelancer@gmail.com',
+  email: 'ayoub.nachat.27@gmail.com',
 };
 
 export { types, contactInfo };

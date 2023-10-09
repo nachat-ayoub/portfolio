@@ -4,6 +4,7 @@ import ProjectPage from './pages/ProjectPage';
 import { getProjectById, getProjects } from './data/services';
 import TestCardAnimation from './components/TestCardAnimation';
 import CreateProjectPage from './components/CreateProjectPage';
+import CVPage from './pages/CVPage';
 
 function App() {
   const router = createBrowserRouter([
@@ -12,8 +13,8 @@ function App() {
       element: <HomePage />,
     },
     {
-      path: '/test',
-      element: <TestCardAnimation />,
+      path: '/cv',
+      element: <CVPage />,
     },
     {
       path: '/projects/:projectId',

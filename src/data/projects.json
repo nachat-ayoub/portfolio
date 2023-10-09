@@ -133,5 +133,29 @@
     "status": "Started",
     "startDate": "2023-08-19",
     "endDate": null
+  },
+
+  {
+    "id": 9,
+    "title": "DevHive Forum",
+    "description": "DevHive Forum is a web application that allows users to ask and answer questions about programming topics. It is similar to Stack Overflow, but with a more modern and user-friendly interface. The project API is built using laravel and in the frontend react.js but currently only the frontend is still under development.",
+    "image": "https://i.imgur.com/6CILcTM.png",
+    "tags": [
+      "React.js",
+      "Web Development",
+      "Full Stack",
+      "Tailwind css",
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "Frontend",
+      "REST API",
+      "Backend"
+    ],
+    "status": "Completed",
+    "issue": "Unfortunately, the frontend is not finished yet.",
+    "githubRepo": "https://github.com/nachat-ayoub/DevHive-Forum",
+    "endDate": "2023-04-20",
+    "startDate": "2023-04-04"
   }
 ]
