@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ProjectPage from './pages/ProjectPage';
 import { getProjectById, getProjects } from './data/services';
-import TestCardAnimation from './components/TestCardAnimation';
 import CreateProjectPage from './components/CreateProjectPage';
 import CVPage from './pages/CVPage';
 
