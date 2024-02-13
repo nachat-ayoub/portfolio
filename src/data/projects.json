@@ -168,7 +168,9 @@
       "Frontend",
       "React.js",
       "Tailwind css",
-      "TypeScript"
+      "TypeScript",
+      "Jotai",
+      "framer-motion"
     ],
     "status": "Completed",
     "issue": "",
