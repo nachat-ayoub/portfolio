@@ -6,17 +6,18 @@ import CreateProjectPage from './components/CreateProjectPage';
 import CVPage from './pages/CVPage';
 
 function App() {
+  const path_prefix = '/portfolio';
   const router = createBrowserRouter([
     {
-      path: '/',
+      path:  path_prefix,
       element: <HomePage />,
     },
     {
-      path: '/cv',
+      path: path_prefix + '/cv',
       element: <CVPage />,
     },
     {
-      path: '/projects/:projectId',
+      path: path_prefix + '/projects/:projectId',
       element: <ProjectPage />,
       loader: ({ params }: any) => {
         const project = getProjectById(parseInt(params.projectId));
@@ -24,7 +25,7 @@ function App() {
       },
     },
     {
-      path: '/projects/create',
+      path: path_prefix + '/projects/create',
       element: <CreateProjectPage />,
       loader: () => {
         const projectData = getProjects();
