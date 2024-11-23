@@ -86,17 +86,16 @@
     "tags": [
       "Web Development",
       "Full Stack",
-      "MongoDB",
-      "Express.js",
       "React.js",
       "Node.js",
-      "MERN Stack",
+      "Next.js",
       "Web Scraping",
-      "Sass"
+      "Tailwind css",
+      "Shadcn"
     ],
     "image": "https://res.cloudinary.com/nachatayoub/image/upload/w_600/v1660565985/image_7437dcd30d.png",
     "githubRepo": "https://github.com/nachat-ayoub/MitAnime",
-    "liveDemo": "https://mitanime.netlify.app/",
+    "liveDemo": "https://mitanime.com/",
     "startDate": "2022-09-22",
     "endDate": "2022-09-29",
     "status": "Completed"
@@ -112,27 +111,6 @@
     "liveDemo": null,
     "startDate": "2023-05-04",
     "endDate": "2023-06-09"
-  },
-  {
-    "id": 8,
-    "title": "Novel Universe",
-    "description": "Novel Universe is an innovative online platform where aspiring authors can share their original novels, fostering a community of writers and readers. The platform features a unique submission process, interactive reader-author interactions, and a range of features that enhance the writing and reading experience.",
-    "image": "https://i.imgur.com/UaSyFa0.png",
-    "tags": [
-      "Web Development",
-      "Full Stack",
-      "Next.js",
-      "React.js",
-      "NextAuth.js",
-      "TypeScript",
-      "PostgreSQL",
-      "Prisma",
-      "Tailwind css"
-    ],
-    "githubRepo": "https://github.com/nachat-ayoub/novel-universe",
-    "status": "Started",
-    "startDate": "2023-08-19",
-    "endDate": null
   },
   {
     "id": 9,
@@ -152,31 +130,9 @@
       "Backend"
     ],
     "status": "Completed",
-    "issue": "Unfortunately, the frontend is not finished yet.",
+    "issue": "Unfortunately, the frontend is not finished.",
     "githubRepo": "https://github.com/nachat-ayoub/DevHive-Forum",
     "endDate": "2023-04-20",
     "startDate": "2023-04-04"
-  },
-
-  {
-    "id": 10,
-    "title": "Match Colored Balls!",
-    "description": "a simple game where you use your brain to move balls one each time until you match all colored balls.",
-    "image": "https://i.imgur.com/eQJdPZy.png",
-    "tags": [
-      "Web Development",
-      "Frontend",
-      "React.js",
-      "Tailwind css",
-      "TypeScript",
-      "Jotai",
-      "framer-motion"
-    ],
-    "status": "Completed",
-    "issue": "",
-    "startDate": "2024-02-12 18:00",
-    "endDate": "2024-02-12 20:00",
-    "githubRepo": "https://github.com/nachat-ayoub/match-colored-balls",
-    "liveDemo": "https://match-colored-balls.netlify.app"
   }
 ]
