@@ -26,7 +26,7 @@ const HeroSection = () => {
       <section className='w-2/3 md:w-1/2 mb-4'>
         <img
           className='w-full md:h-[70vh] object-contain'
-          src='/assets/hero.png'
+          src='/portfolio/assets/hero.png'
         />
       </section>
     </div>

@@ -23,7 +23,7 @@ const Image: React.FC<ImagePropsType> = ({ sm, src, ...rest }) => {
       {...rest}
       src={modifiedSrc}
       onError={(e) => {
-        e.currentTarget.src = '/assets/no_image_placholder.jpg';
+        e.currentTarget.src = '/portfolio/assets/no_image_placholder.jpg';
       }}
     />
   );
