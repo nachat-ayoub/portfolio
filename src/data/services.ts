@@ -18,7 +18,7 @@ export function getProjects(filter?: IProjectsFilter | null): IProjectData {
     : projects;
 
   const sortBy = 'startDate';
-  const sortOrder: number = -1;
+  const sortOrder : number = -1;
 
   const sortedProjects =
     filteredProjects.length > 1

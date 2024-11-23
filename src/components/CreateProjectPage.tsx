@@ -10,7 +10,7 @@ const ProjectCreationPage = () => {
   const [formData, setFormData] = useState<
     Partial<IProject & { newTag: string }>
   >({
-    id: projects[0]?.id + 1 ?? 1,
+    id: projects[0]?.id + 1,
     title: '',
     description: '',
     image: '',

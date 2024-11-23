@@ -90,9 +90,9 @@ const TextMorphEffect: React.FC<TextMorphEffectProps> = ({
     }
 
     function animate() {
-      let newTime = new Date();
-      let shouldIncrementIndex = cooldown > 0;
-      let dt = (newTime.getTime() - time.getTime()) / 1000;
+      const newTime = new Date();
+      const shouldIncrementIndex = cooldown > 0;
+      const dt = (newTime.getTime() - time.getTime()) / 1000;
       time = newTime;
 
       cooldown -= dt;
