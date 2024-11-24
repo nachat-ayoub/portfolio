@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <title>Single Page Apps for GitHub Pages</title>
     <script type="text/javascript">
+
+      const l = window.location;
       // Get the current path (excluding domain and query params)
-      const path = window.location.pathname + window.location.search;
+      const path = l.pathname + l.search;
       // Redirect to index.html with the route as a query parameter
-      const newUrl = `${window.location.pathname.split('/').slice(0, 1 + 1).join('/')}/?route=${encodeURIComponent(path)}`;
-      window.location.replace(newUrl);
+      const newUrl = `/?route=${encodeURIComponent(path)}`;
+      l.replace(newUrl);
     </script>
   </head>
   <body>
