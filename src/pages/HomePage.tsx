@@ -8,10 +8,31 @@ import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface IHomeProps {}
 
 const Home: React.FC<IHomeProps> = () => {
+
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    // Parse the query string to check for `route`
+    const params = new URLSearchParams(window.location.search);
+    const redirectRoute = params.get('route');
+
+    if (redirectRoute) {
+      // Remove the query parameter from the URL
+      const newUrl = window.location.origin + window.location.pathname;
+      window.history.replaceState(null, '', newUrl);
+
+      // Navigate to the route
+      navigate(redirectRoute);
+    }
+  }, [navigate]);
+
+
+
   const [searchFilters, setSearchFilters] = useState<IProjectsFilter | null>(
     null
   );
