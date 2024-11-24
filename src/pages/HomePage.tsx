@@ -23,7 +23,7 @@ const Home: React.FC<IHomeProps> = () => {
 
     if (redirectRoute) {
       // Remove the query parameter from the URL
-      const newUrl = window.location.origin + window.location.pathname;
+      const newUrl = window.location.origin + (window.location.pathname.replace('/portfolio',''));
       window.history.replaceState(null, '', newUrl);
 
       // Navigate to the route
