@@ -12,7 +12,7 @@ const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
   return (
     <Link
       className='w-full sm:w-[25.5rem] md:w-[20rem] lg:w-[25rem]'
-      to={`/portfolio/projects/${project.id}`}
+      to={`/projects/${project.id}`}
       title={project.title}
     >
       <div className='w-full border-gray-200 dark:border-none rounded-b-sm border overflow-hidden rounded-t-md dark:shadow-[#232433] dark:shadow-sm mx-auto'>

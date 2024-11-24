@@ -6,18 +6,17 @@ import CreateProjectPage from './components/CreateProjectPage';
 import CVPage from './pages/CVPage';
 
 function App() {
-  const path_prefix = '/portfolio';
   const router = createBrowserRouter([
     {
-      path:  path_prefix,
+      path: '/',
       element: <HomePage />,
     },
     {
-      path: path_prefix + '/cv',
+      path: '/cv',
       element: <CVPage />,
     },
     {
-      path: path_prefix + '/projects/:projectId',
+      path: '/projects/:projectId',
       element: <ProjectPage />,
       loader: ({ params }: any) => {
         const project = getProjectById(parseInt(params.projectId));
@@ -25,14 +24,18 @@ function App() {
       },
     },
     {
-      path: path_prefix + '/projects/create',
+      path: '/projects/create',
       element: <CreateProjectPage />,
       loader: () => {
         const projectData = getProjects();
         return projectData;
       },
     },
-  ]);
+  ],
+  {
+    // Set the base route path
+    basename: "/portfolio",
+  });
 
   return <RouterProvider router={router} />;
 }

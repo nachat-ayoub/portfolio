@@ -5,8 +5,8 @@ const Navbar = () => {
   return (
     <nav className='flex items-center justify-center px-4 py-8'>
       <ul className='flex items-center justify-center gap-x-10'>
-        <NavLink text='Home' to={'/portfolio'} />
-        <NavLink text='CV' to={'/portfolio/cv'} />
+        <NavLink text='Home' to={''} />
+        <NavLink text='CV' to={'/cv'} />
         <NavLink text={'Contact'} to={'mailto:' + contactInfo.email} />
       </ul>
     </nav>

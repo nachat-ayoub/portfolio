@@ -17,7 +17,7 @@ const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
     <Link
       className='w-full sm:w-[25.5rem] md:w-[20rem] lg:w-[25rem]'
       title={project.title}
-      to={`/portfolio/projects/${project.id}`}
+      to={`/projects/${project.id}`}
     >
       <motion.div
         className='w-full border-gray-200 dark:border-none rounded-b-sm border overflow-hidden rounded-t-md dark:shadow-[#232433] dark:shadow-sm mx-auto'
